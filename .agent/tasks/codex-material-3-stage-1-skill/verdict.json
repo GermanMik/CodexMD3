@@ -2,7 +2,7 @@
   "task_id": "codex-material-3-stage-1-skill",
   "verifier_identity": "fresh-verifier",
   "verdict": "PASS",
-  "summary": "The canonical Material 3 skill is present, MD3-specific, mode-complete, and backed by the required reference corpus.",
+  "summary": "The canonical Material 3 skill is present, MD3-specific, mode-complete, now exposes an explicit mode decision path, and remains backed by the required reference corpus.",
   "acceptance_criteria": [
     {
       "id": "AC1.1",
@@ -16,7 +16,7 @@
     {
       "id": "AC1.2",
       "status": "PASS",
-      "reason": "The skill defines the five required modes and provides a decision path for selecting them.",
+      "reason": "The skill defines the five required modes and now provides an explicit decision path for selecting them when a request is ambiguous.",
       "evidence_refs": [
         ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-mode-check.txt",
         ".agents/skills/material-3/SKILL.md"
@@ -70,5 +70,5 @@
   "release_checks": [],
   "open_problems_count": 0,
   "requires_fix": false,
-  "timestamp": "2026-04-14T19:50:30+03:00"
+  "timestamp": "2026-04-14T20:04:51.4016835+03:00"
 }
