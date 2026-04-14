@@ -1,14 +1,15 @@
 # Evidence for codex-material-3-stage-1-skill
 
 ## Build summary
-Created the canonical repo-local Material Design 3 skill under `.agents/skills/material-3/`, including the required reference corpus, UI metadata, and usage notes. The skill is explicitly MD3-specific and encodes component, theme, layout, scaffold, and audit modes.
+Refined the canonical repo-local Material Design 3 skill under `.agents/skills/material-3/` by making the mode-selection decision path explicit in `SKILL.md` and tightening the Web-limited boundary without expanding beyond MD3 scope. Re-synchronized the bundled plugin copy through the packaging path, then rebuilt the stage-1 evidence from fresh repo-local checks.
 
 ## Commands run
-- `Get-ChildItem -Recurse .agents/skills/material-3`
-- `rg -n "component|theme|layout|scaffold|audit" .agents/skills/material-3/SKILL.md`
-- `rg -n "Compose|Flutter|Web|compose|flutter|web" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/platform-matrix.md`
-- `rg -n "scorecard|findings|quick wins|remediation sequence|unresolved risks|Critical|High|Medium|Low|Note" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/audit-rubric.md .agents/skills/material-3/references/remediation-policy.md`
-- `python C:\Users\tikta\.codex\skills\.system\skill-creator\scripts\quick_validate.py .agents/skills/material-3`
+- `Get-ChildItem -Recurse .agents\skills\material-3 | ForEach-Object { $_.FullName } | Set-Content -Encoding utf8 .agent\tasks\codex-material-3-stage-1-skill\raw\skill-file-check.txt`
+- `rg -n "component|theme|layout|scaffold|audit|decision path" .agents/skills/material-3/SKILL.md | Set-Content -Encoding utf8 .agent\tasks\codex-material-3-stage-1-skill\raw\skill-mode-check.txt`
+- `rg -n "Compose|Flutter|Web|compose|flutter|web|parity" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/platform-matrix.md | Set-Content -Encoding utf8 .agent\tasks\codex-material-3-stage-1-skill\raw\platform-boundaries-check.txt`
+- `rg -n "scorecard|findings|quick wins|remediation sequence|unresolved risks|Critical|High|Medium|Low|Note|smallest safe" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/audit-rubric.md .agents/skills/material-3/references/remediation-policy.md | Set-Content -Encoding utf8 .agent\tasks\codex-material-3-stage-1-skill\raw\audit-contract-check.txt`
+- `python C:\Users\tikta\.codex\skills\.system\skill-creator\scripts\quick_validate.py .agents/skills/material-3 *> .agent\tasks\codex-material-3-stage-1-skill\raw\quick-validate.txt`
+- `python scripts/sync_plugin_bundle.py *> .agent\tasks\codex-material-3-stage-1-skill\raw\plugin-sync-check.json`
 
 ## Raw artifacts
 - `raw/skill-file-check.txt`
@@ -16,6 +17,7 @@ Created the canonical repo-local Material Design 3 skill under `.agents/skills/m
 - `raw/platform-boundaries-check.txt`
 - `raw/audit-contract-check.txt`
 - `raw/quick-validate.txt`
+- `raw/plugin-sync-check.json`
 
 ## Acceptance criteria mapping
 - AC1.1 -> evidence: [SKILL.md](/C:/Develop/Projects/CodexMD3/.agents/skills/material-3/SKILL.md), `raw/quick-validate.txt`
@@ -29,6 +31,7 @@ Created the canonical repo-local Material Design 3 skill under `.agents/skills/m
 ## Known limitations
 - The skill includes usage notes because the task explicitly required them, even though the generic skill-creator guidance would normally avoid extra docs.
 - Web support remains intentionally limited to token and guidance paths.
+- Plugin sync proof is recorded to avoid bundle drift, but plugin packaging itself remains outside the stage-1 acceptance boundary.
 
 ## Release evidence
 - current version: `1.0.0`

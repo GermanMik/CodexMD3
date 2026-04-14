@@ -1,9 +1,3 @@
-.agents/skills/material-3/SKILL.md:3:description: Design, scaffold, theme, adapt, and audit Material Design 3 / Material You user interfaces with a Compose-first workflow, Flutter-secondary implementation guidance, and limited Web token guidance. Use when Codex needs to choose or generate MD3 components, build or adapt MD3 themes, produce MD3 layout or navigation shells, scaffold MD3 screens, or run an MD3-specific compliance audit with concrete remediation.
-.agents/skills/material-3/SKILL.md:12:- Prefer Jetpack Compose Material 3 APIs and patterns as the primary path.
-.agents/skills/material-3/SKILL.md:13:- Support Flutter Material 3 as a secondary implementation path.
-.agents/skills/material-3/SKILL.md:14:- Keep Web support limited to tokens, CSS architecture, and component guidance unless the user explicitly asks for a constrained web implementation.
-.agents/skills/material-3/SKILL.md:40:- `references/platform-matrix.md`: Compose-first, Flutter-secondary, Web-limited boundaries.
-.agents/skills/material-3/SKILL.md:124:- Do not invert platform priorities; Compose stays primary.
 .agents/skills/material-3/references/platform-matrix.md:5:- Jetpack Compose Material 3: primary path
 .agents/skills/material-3/references/platform-matrix.md:6:- Flutter Material 3: secondary path
 .agents/skills/material-3/references/platform-matrix.md:7:- Web design systems and CSS tokens: limited path
@@ -15,3 +9,10 @@
 .agents/skills/material-3/references/platform-matrix.md:28:## Web-limited rule
 .agents/skills/material-3/references/platform-matrix.md:30:Keep web support focused on:
 .agents/skills/material-3/references/platform-matrix.md:37:Do not present the web path as equal in coverage to Compose unless the implementation proves it.
+.agents/skills/material-3/SKILL.md:3:description: Design, scaffold, theme, adapt, and audit Material Design 3 / Material You user interfaces with a Compose-first workflow, Flutter-secondary implementation guidance, and limited Web token guidance. Use when Codex needs to choose or generate MD3 components, build or adapt MD3 themes, produce MD3 layout or navigation shells, scaffold MD3 screens, or run an MD3-specific compliance audit with concrete remediation.
+.agents/skills/material-3/SKILL.md:12:- Prefer Jetpack Compose Material 3 APIs and patterns as the primary path.
+.agents/skills/material-3/SKILL.md:13:- Support Flutter Material 3 as a secondary implementation path.
+.agents/skills/material-3/SKILL.md:14:- Keep Web support limited to tokens, CSS architecture, and component guidance unless the user explicitly asks for a constrained web implementation.
+.agents/skills/material-3/SKILL.md:15:- Do not imply full Web parity with Compose unless the repo-local implementation proves it.
+.agents/skills/material-3/SKILL.md:49:- `references/platform-matrix.md`: Compose-first, Flutter-secondary, Web-limited boundaries.
+.agents/skills/material-3/SKILL.md:133:- Do not invert platform priorities; Compose stays primary.

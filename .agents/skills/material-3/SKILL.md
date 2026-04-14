@@ -12,6 +12,7 @@ Use this skill only for Material Design 3 or Material You work. Stay MD3-specifi
 - Prefer Jetpack Compose Material 3 APIs and patterns as the primary path.
 - Support Flutter Material 3 as a secondary implementation path.
 - Keep Web support limited to tokens, CSS architecture, and component guidance unless the user explicitly asks for a constrained web implementation.
+- Do not imply full Web parity with Compose unless the repo-local implementation proves it.
 - Treat MD3 as personal, adaptive, and expressive: start from task intent, state, context, and device class before choosing components.
 
 ## Mode selection
@@ -25,6 +26,14 @@ Choose one primary mode before producing output:
 - `audit`: Score an existing screen or code path for MD3 compliance and propose the smallest safe fixes.
 
 If a request spans multiple areas, set a primary mode and a secondary mode. Example: a dashboard shell with theme polish is `scaffold` primary and `theme` secondary.
+
+Use this decision path when the request is ambiguous:
+
+- Existing screen, code path, or screenshot that needs scoring or gap analysis -> `audit`
+- New app shell, screen skeleton, or navigation shell -> `scaffold`
+- Window-size adaptation, navigation switching, insets, or responsive shell behavior -> `layout`
+- Seed color, tokens, dynamic color, typography, shape, or elevation strategy -> `theme`
+- Specific control, state model, or component choice -> `component`
 
 ## Reference loading map
 

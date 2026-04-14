@@ -3,14 +3,34 @@
   "builder_identity": "task-builder",
   "commands": [
     {
-      "cmd": "Get-ChildItem -Recurse .agents/skills/material-3",
+      "cmd": "Get-ChildItem -Recurse .agents\\skills\\material-3 | ForEach-Object { $_.FullName } | Set-Content -Encoding utf8 .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\skill-file-check.txt",
       "exit_code": 0,
       "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-file-check.txt"
     },
     {
-      "cmd": "python C:\\Users\\tikta\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .agents/skills/material-3",
+      "cmd": "rg -n \"component|theme|layout|scaffold|audit|decision path\" .agents/skills/material-3/SKILL.md | Set-Content -Encoding utf8 .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\skill-mode-check.txt",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-mode-check.txt"
+    },
+    {
+      "cmd": "rg -n \"Compose|Flutter|Web|compose|flutter|web|parity\" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/platform-matrix.md | Set-Content -Encoding utf8 .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\platform-boundaries-check.txt",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/platform-boundaries-check.txt"
+    },
+    {
+      "cmd": "rg -n \"scorecard|findings|quick wins|remediation sequence|unresolved risks|Critical|High|Medium|Low|Note|smallest safe\" .agents/skills/material-3/SKILL.md .agents/skills/material-3/references/audit-rubric.md .agents/skills/material-3/references/remediation-policy.md | Set-Content -Encoding utf8 .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\audit-contract-check.txt",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt"
+    },
+    {
+      "cmd": "python C:\\Users\\tikta\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .agents/skills/material-3 *> .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\quick-validate.txt",
       "exit_code": 0,
       "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt"
+    },
+    {
+      "cmd": "python scripts/sync_plugin_bundle.py *> .agent\\tasks\\codex-material-3-stage-1-skill\\raw\\plugin-sync-check.json",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/plugin-sync-check.json"
     }
   ],
   "artifacts": [
@@ -33,6 +53,10 @@
     {
       "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt",
       "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/plugin-sync-check.json",
+      "type": "json"
     }
   ],
   "ac_map": {
@@ -50,5 +74,5 @@
     "tag": null,
     "release_commit_message": null
   },
-  "timestamp": "2026-04-14T19:50:30+03:00"
+  "timestamp": "2026-04-14T20:04:05.2029772+03:00"
 }

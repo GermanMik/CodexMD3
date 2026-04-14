@@ -1,17 +1,20 @@
+.agents/skills/material-3/references/remediation-policy.md:5:Fix the smallest safe MD3 violation first. Use local, token-level, or component-level changes before considering layout rewrites.
 .agents/skills/material-3/references/remediation-policy.md:29:- marking findings as resolved without fresh verification
-.agents/skills/material-3/SKILL.md:41:- `references/remediation-policy.md`: smallest safe MD3-correct fix policy.
-.agents/skills/material-3/SKILL.md:78:- `scorecard`
-.agents/skills/material-3/SKILL.md:79:- `findings`
-.agents/skills/material-3/SKILL.md:80:- `quick wins`
-.agents/skills/material-3/SKILL.md:81:- `remediation sequence`
-.agents/skills/material-3/SKILL.md:82:- `unresolved risks`
-.agents/skills/material-3/SKILL.md:97:- `Critical`
-.agents/skills/material-3/SKILL.md:98:- `High`
-.agents/skills/material-3/SKILL.md:99:- `Medium`
-.agents/skills/material-3/SKILL.md:100:- `Low`
-.agents/skills/material-3/SKILL.md:101:- `Note`
-.agents/skills/material-3/SKILL.md:113:Use the optional MCP layer for deterministic lookups, theme scaffolds, scorecards, and release consistency checks. Keep these activities in the skill reasoning layer:
-.agents/skills/material-3/SKILL.md:117:- prioritizing remediation sequence
+.agents/skills/material-3/SKILL.md:26:- `audit`: Score an existing screen or code path for MD3 compliance and propose the smallest safe fixes.
+.agents/skills/material-3/SKILL.md:50:- `references/remediation-policy.md`: smallest safe MD3-correct fix policy.
+.agents/skills/material-3/SKILL.md:87:- `scorecard`
+.agents/skills/material-3/SKILL.md:88:- `findings`
+.agents/skills/material-3/SKILL.md:89:- `quick wins`
+.agents/skills/material-3/SKILL.md:90:- `remediation sequence`
+.agents/skills/material-3/SKILL.md:91:- `unresolved risks`
+.agents/skills/material-3/SKILL.md:106:- `Critical`
+.agents/skills/material-3/SKILL.md:107:- `High`
+.agents/skills/material-3/SKILL.md:108:- `Medium`
+.agents/skills/material-3/SKILL.md:109:- `Low`
+.agents/skills/material-3/SKILL.md:110:- `Note`
+.agents/skills/material-3/SKILL.md:117:- When proposing fixes, use the smallest safe change that restores MD3 correctness.
+.agents/skills/material-3/SKILL.md:122:Use the optional MCP layer for deterministic lookups, theme scaffolds, scorecards, and release consistency checks. Keep these activities in the skill reasoning layer:
+.agents/skills/material-3/SKILL.md:126:- prioritizing remediation sequence
 .agents/skills/material-3/references/audit-rubric.md:24:- quick wins
 .agents/skills/material-3/references/audit-rubric.md:25:- remediation sequence
 .agents/skills/material-3/references/audit-rubric.md:26:- unresolved risks
