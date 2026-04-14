@@ -1,0 +1,54 @@
+{
+  "task_id": "codex-material-3-stage-1-skill",
+  "builder_identity": "task-builder",
+  "commands": [
+    {
+      "cmd": "Get-ChildItem -Recurse .agents/skills/material-3",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-file-check.txt"
+    },
+    {
+      "cmd": "python C:\\Users\\tikta\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .agents/skills/material-3",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-file-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-mode-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/platform-boundaries-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt",
+      "type": "text"
+    }
+  ],
+  "ac_map": {
+    "AC1.1": [".agents/skills/material-3/SKILL.md", ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt"],
+    "AC1.2": [".agent/tasks/codex-material-3-stage-1-skill/raw/skill-mode-check.txt"],
+    "AC1.3": [".agent/tasks/codex-material-3-stage-1-skill/raw/skill-file-check.txt"],
+    "AC1.4": [".agent/tasks/codex-material-3-stage-1-skill/raw/platform-boundaries-check.txt", ".agents/skills/material-3/references/platform-matrix.md"],
+    "AC1.5": [".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt", ".agents/skills/material-3/references/audit-rubric.md"],
+    "AC1.6": [".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt", ".agents/skills/material-3/references/remediation-policy.md"],
+    "AC1.7": [".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt", ".agents/skills/material-3/SKILL.md"]
+  },
+  "release_metadata": {
+    "current_version": "1.0.0",
+    "target_version": "1.0.0",
+    "tag": null,
+    "release_commit_message": null
+  },
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

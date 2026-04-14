@@ -1,0 +1,22 @@
+{
+  "canonical_version_file": "plugin/.codex-plugin/plugin.json",
+  "version_bearing_files": [
+    "plugin/.codex-plugin/plugin.json",
+    "mcp/manifest.json",
+    "CHANGELOG.md"
+  ],
+  "required_docs": [
+    "docs/versioning-policy.md",
+    "docs/release-policy.md",
+    "docs/release-checklist.md",
+    "docs/hotfix-policy.md",
+    "docs/github-release-flow.md",
+    "docs/packaging-sync-policy.md"
+  ],
+  "canonical_skill": ".agents/skills/material-3",
+  "bundled_skill": "plugin/skills/material-3",
+  "plugin_mcp_config": "plugin/.mcp.json",
+  "marketplace_file": ".agents/plugins/marketplace.json",
+  "release_commit_pattern": "^release: v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:rc|beta)\\.[0-9]+)?$",
+  "tag_pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:rc|beta)\\.[0-9]+)?$"
+}

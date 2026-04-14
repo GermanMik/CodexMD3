@@ -1,0 +1,138 @@
+{
+  "task_id": "codex-material-3-stage-4-release",
+  "verifier_identity": "fresh-verifier",
+  "verdict": "PASS",
+  "summary": "The release workflow defines versioning, changelog, tag, GitHub Release, packaging sync, dry-run, and post-release verification surfaces, and RC1-RC12 pass against the current repo state.",
+  "acceptance_criteria": [
+    {
+      "id": "AC4.1",
+      "status": "PASS",
+      "reason": "The versioning policy defines SemVer, the canonical public version surface, and MCP version alignment expectations.",
+      "evidence_refs": [
+        "docs/versioning-policy.md",
+        "plugin/.codex-plugin/plugin.json"
+      ]
+    },
+    {
+      "id": "AC4.2",
+      "status": "PASS",
+      "reason": "Release policy and checklist exist and encode dry-run plus post-release verification discipline.",
+      "evidence_refs": [
+        "docs/release-policy.md",
+        "docs/release-checklist.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
+      ]
+    },
+    {
+      "id": "AC4.3",
+      "status": "PASS",
+      "reason": "CHANGELOG.md exists and includes the required section skeleton for the current release version.",
+      "evidence_refs": [
+        "CHANGELOG.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/changelog-check.txt"
+      ]
+    },
+    {
+      "id": "AC4.4",
+      "status": "PASS",
+      "reason": "Tag policy and release commit policy are documented and validated against the current release metadata.",
+      "evidence_refs": [
+        "docs/versioning-policy.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/tag-check.txt",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
+      ]
+    },
+    {
+      "id": "AC4.5",
+      "status": "PASS",
+      "reason": "GitHub Release publication is documented and backed by a workflow definition.",
+      "evidence_refs": [
+        "docs/github-release-flow.md",
+        ".github/workflows/publish-release.yml"
+      ]
+    },
+    {
+      "id": "AC4.6",
+      "status": "PASS",
+      "reason": "Packaging synchronization is a mandatory release step and is proven by a raw sync check.",
+      "evidence_refs": [
+        "docs/packaging-sync-policy.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/packaging-sync-check.txt"
+      ]
+    },
+    {
+      "id": "AC4.7",
+      "status": "PASS",
+      "reason": "Release verification explicitly checks version drift and emits structured RC results.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json",
+        "scripts/validate_release.py"
+      ]
+    }
+  ],
+  "release_checks": [
+    {
+      "id": "RC1",
+      "status": "PASS",
+      "reason": "Current version 1.0.0 was detected from plugin/.codex-plugin/plugin.json."
+    },
+    {
+      "id": "RC2",
+      "status": "PASS",
+      "reason": "Dry-run planning computed the next patch release as 1.0.1 from current version 1.0.0."
+    },
+    {
+      "id": "RC3",
+      "status": "PASS",
+      "reason": "Plugin manifest, MCP manifest, and changelog align on version 1.0.0."
+    },
+    {
+      "id": "RC4",
+      "status": "PASS",
+      "reason": "CHANGELOG.md contains the current release header and required section skeleton."
+    },
+    {
+      "id": "RC5",
+      "status": "PASS",
+      "reason": "The release commit draft matches the policy format release: v1.0.0."
+    },
+    {
+      "id": "RC6",
+      "status": "PASS",
+      "reason": "The tag draft matches the policy format v1.0.0."
+    },
+    {
+      "id": "RC7",
+      "status": "PASS",
+      "reason": "A release notes draft exists and references version 1.0.0."
+    },
+    {
+      "id": "RC8",
+      "status": "PASS",
+      "reason": "Plugin metadata and release metadata are consistent with the expected release version."
+    },
+    {
+      "id": "RC9",
+      "status": "PASS",
+      "reason": "No version or bundle drift was detected across release surfaces."
+    },
+    {
+      "id": "RC10",
+      "status": "PASS",
+      "reason": "Packaging synchronization is proven by the sync check output."
+    },
+    {
+      "id": "RC11",
+      "status": "PASS",
+      "reason": "The GitHub Release publication path is reproducible through docs plus workflow definition."
+    },
+    {
+      "id": "RC12",
+      "status": "PASS",
+      "reason": "Post-release verification is defined in the release policy and checklist."
+    }
+  ],
+  "open_problems_count": 0,
+  "requires_fix": false,
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

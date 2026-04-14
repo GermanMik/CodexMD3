@@ -1,0 +1,28 @@
+{
+  "severity_penalties": {
+    "Critical": 25,
+    "High": 15,
+    "Medium": 8,
+    "Low": 3,
+    "Note": 1
+  },
+  "severity_order": {
+    "Critical": 5,
+    "High": 4,
+    "Medium": 3,
+    "Low": 2,
+    "Note": 1
+  },
+  "category_weights": {
+    "color_tokens": 1.2,
+    "typography": 0.9,
+    "shape": 0.7,
+    "elevation_and_tonal_surfaces": 1.0,
+    "component_correctness": 1.2,
+    "layout_and_responsiveness": 1.1,
+    "navigation_patterns": 1.0,
+    "motion_and_interaction_guidance": 0.7,
+    "accessibility": 1.3,
+    "theming_consistency": 1.1
+  }
+}

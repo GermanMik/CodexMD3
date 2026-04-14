@@ -1,0 +1,80 @@
+{
+  "rules": {
+    "window-size-classes": {
+      "summary": "Choose shell structure and navigation adaptation from compact, medium, and expanded widths.",
+      "window_class_guidance": {
+        "compact": "Single-pane task focus, bottom navigation when top-level destinations are persistent.",
+        "medium": "Navigation rail by default, optional supporting pane for dense content.",
+        "expanded": "Permanent drawer or multi-pane shell when information density warrants it."
+      },
+      "platform_notes": {
+        "compose": "Compose adaptive layouts are the primary reference.",
+        "flutter": "Translate width-class intent into breakpoints and scaffold adaptation.",
+        "web": "Use as responsive shell guidance, not as proof of runtime parity."
+      }
+    },
+    "adaptive-navigation": {
+      "summary": "Adapt primary navigation from bar to rail to drawer as width and IA complexity increase.",
+      "window_class_guidance": {
+        "compact": "navigation-bar",
+        "medium": "navigation-rail",
+        "expanded": "navigation-drawer or rail-plus-pane"
+      },
+      "platform_notes": {
+        "compose": "Canonical rule for MD3 navigation adaptation.",
+        "flutter": "Supported with scaffold composition and breakpoint logic.",
+        "web": "Use as shell guidance only when the app intentionally follows MD3."
+      }
+    },
+    "edge-to-edge": {
+      "summary": "Treat system bars, safe areas, and IME insets as first-class layout inputs.",
+      "window_class_guidance": {
+        "compact": "Protect bottom bars, FABs, and sheets from gesture and IME collisions.",
+        "medium": "Preserve rail and pane spacing while respecting status and navigation insets.",
+        "expanded": "Keep drawer, pane, and top-bar regions aligned under safe drawing rules."
+      },
+      "platform_notes": {
+        "compose": "Prefer WindowInsets-aware APIs over magic numbers.",
+        "flutter": "Use SafeArea and explicit inset handling together, not blindly.",
+        "web": "Document environment-specific safe-area assumptions."
+      }
+    },
+    "responsive-app-shells": {
+      "summary": "Start from an MD3 shell before styling the screen interior.",
+      "window_class_guidance": {
+        "compact": "Top app bar + primary content + optional bottom nav/FAB",
+        "medium": "Top app bar + rail + content + optional supporting pane",
+        "expanded": "Top app bar + permanent drawer or rail + multi-pane content"
+      },
+      "platform_notes": {
+        "compose": "Use Scaffold-style composition with adaptive nav.",
+        "flutter": "Use themed scaffold structures with explicit breakpoint adaptation.",
+        "web": "Treat shells as a tokenized layout framework, not as generic dashboard templates."
+      }
+    },
+    "large-screens": {
+      "summary": "Use additional panes only when they reduce context switching.",
+      "window_class_guidance": {
+        "medium": "Support list-detail patterns where content density benefits.",
+        "expanded": "Promote to permanent navigation and supporting panes where justified."
+      },
+      "platform_notes": {
+        "compose": "Canonical large-screen and adaptive UI path.",
+        "flutter": "Mirror intent even when APIs differ.",
+        "web": "Avoid simply stretching compact layouts."
+      }
+    },
+    "foldables": {
+      "summary": "Separate posture logic from width logic when fold state materially affects layout.",
+      "window_class_guidance": {
+        "medium": "Consider pane separation when posture offers meaningful split context.",
+        "expanded": "Keep posture-aware panes task-driven rather than novelty-driven."
+      },
+      "platform_notes": {
+        "compose": "Primary path for posture-aware adaptive behavior.",
+        "flutter": "Support conditionally if the app consumes fold/posture data.",
+        "web": "Guidance-only unless foldable web support is explicitly proven."
+      }
+    }
+  }
+}

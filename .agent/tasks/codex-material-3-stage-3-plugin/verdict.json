@@ -1,0 +1,66 @@
+{
+  "task_id": "codex-material-3-stage-3-plugin",
+  "verifier_identity": "fresh-verifier",
+  "verdict": "PASS",
+  "summary": "The plugin bundle, marketplace entry, bundled MCP config, and sync path are present and internally consistent with the canonical skill boundary.",
+  "acceptance_criteria": [
+    {
+      "id": "AC3.1",
+      "status": "PASS",
+      "reason": "The plugin manifest exists and positions the bundle as an MD3 workflow plugin for Codex.",
+      "evidence_refs": [
+        "plugin/.codex-plugin/plugin.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"
+      ]
+    },
+    {
+      "id": "AC3.2",
+      "status": "PASS",
+      "reason": "The bundled skill copy exists under plugin/skills/material-3.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt"
+      ]
+    },
+    {
+      "id": "AC3.3",
+      "status": "PASS",
+      "reason": "The repo documents the bundled skill as a packaging artifact and keeps canonical authoring in .agents/skills/material-3.",
+      "evidence_refs": [
+        "plugin/README.md",
+        "docs/packaging-sync-policy.md"
+      ]
+    },
+    {
+      "id": "AC3.4",
+      "status": "PASS",
+      "reason": "Bundled MCP configuration exists and is explicitly documented as repo-local deterministic support.",
+      "evidence_refs": [
+        "plugin/.mcp.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"
+      ]
+    },
+    {
+      "id": "AC3.5",
+      "status": "PASS",
+      "reason": "A local marketplace example exists and points to the repo-local plugin bundle.",
+      "evidence_refs": [
+        ".agents/plugins/marketplace.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"
+      ]
+    },
+    {
+      "id": "AC3.6",
+      "status": "PASS",
+      "reason": "Packaging sync rules are documented and the sync check proves the bundle matches canonical source state.",
+      "evidence_refs": [
+        "scripts/sync_plugin_bundle.py",
+        "docs/packaging-sync-policy.md",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+      ]
+    }
+  ],
+  "release_checks": [],
+  "open_problems_count": 0,
+  "requires_fix": false,
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

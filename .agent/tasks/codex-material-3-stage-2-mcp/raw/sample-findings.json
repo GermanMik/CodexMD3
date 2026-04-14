@@ -1,0 +1,20 @@
+[
+  {
+    "id": "F1",
+    "title": "Hard-coded brand blue bypasses MD3 primary role",
+    "severity": "High",
+    "category": "color_tokens",
+    "impact": "The screen breaks seeded theming and dark-theme consistency.",
+    "recommended_fix": "Replace literal blue values with theme primary/container roles.",
+    "confidence": 0.93
+  },
+  {
+    "id": "F2",
+    "title": "Navigation rail missing selected-state label emphasis",
+    "severity": "Medium",
+    "category": "navigation_patterns",
+    "impact": "Destination hierarchy is less legible on medium widths.",
+    "recommended_fix": "Use the MD3 selected rail item treatment and label style tokens.",
+    "confidence": 0.82
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "primary_path": "compose",
+  "secondary_path": "flutter",
+  "limited_path": "web",
+  "platforms": {
+    "compose": {
+      "tier": "primary",
+      "positioning": "Canonical MD3 implementation path.",
+      "strengths": [
+        "Strongest Material 3 component parity",
+        "Dynamic color support",
+        "Adaptive navigation and edge-to-edge guidance align closely with MD3"
+      ],
+      "limitations": [
+        "Still requires project-specific implementation details for product logic"
+      ]
+    },
+    "flutter": {
+      "tier": "secondary",
+      "positioning": "Supported MD3 implementation path with adaptation notes.",
+      "strengths": [
+        "Broad Material 3 theming coverage",
+        "Cross-platform UI path",
+        "Good support for component-based MD3 translation"
+      ],
+      "limitations": [
+        "Some APIs and variant parity differ from Compose-first guidance"
+      ]
+    },
+    "web": {
+      "tier": "limited",
+      "positioning": "Token and component-guidance path, not full parity by default.",
+      "strengths": [
+        "CSS variable token architecture",
+        "Semantic component guidance",
+        "Responsive shell planning"
+      ],
+      "limitations": [
+        "No automatic assumption of full dynamic-color parity",
+        "Component runtime parity must be proven per implementation"
+      ]
+    }
+  },
+  "topics": {
+    "component-guidance": {
+      "compose": "canonical",
+      "flutter": "supported",
+      "web": "limited"
+    },
+    "theme-scaffolding": {
+      "compose": "canonical",
+      "flutter": "supported",
+      "web": "token-oriented"
+    },
+    "dynamic-color": {
+      "compose": "strong",
+      "flutter": "conditional",
+      "web": "limited"
+    },
+    "layout-and-navigation": {
+      "compose": "canonical",
+      "flutter": "supported",
+      "web": "guidance-only"
+    },
+    "audit": {
+      "compose": "canonical",
+      "flutter": "supported",
+      "web": "limited"
+    }
+  }
+}

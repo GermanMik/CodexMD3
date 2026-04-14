@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "material-3": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["../mcp/server.py"],
+      "cwd": "..",
+      "note": "Optional deterministic Material Design 3 MCP server for repo-local installs. Keep aligned with mcp/manifest.json and release validation."
+    }
+  }
+}

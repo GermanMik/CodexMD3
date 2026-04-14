@@ -1,0 +1,5 @@
+current_version=1.0.0
+release_commit=release: v1.0.0
+tag=v1.0.0
+commit_matches=True
+tag_matches=True

@@ -1,0 +1,53 @@
+{
+  "task_id": "codex-material-3-stage-3-plugin",
+  "builder_identity": "task-builder",
+  "commands": [
+    {
+      "cmd": "python scripts/sync_plugin_bundle.py --check",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+    },
+    {
+      "cmd": "Get-Content -Raw plugin/.codex-plugin/plugin.json",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt",
+      "type": "text"
+    }
+  ],
+  "ac_map": {
+    "AC3.1": ["plugin/.codex-plugin/plugin.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"],
+    "AC3.2": [".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt"],
+    "AC3.3": ["plugin/README.md", "docs/packaging-sync-policy.md"],
+    "AC3.4": ["plugin/.mcp.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"],
+    "AC3.5": [".agents/plugins/marketplace.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"],
+    "AC3.6": [".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt", "docs/packaging-sync-policy.md", "scripts/sync_plugin_bundle.py"]
+  },
+  "release_metadata": {
+    "current_version": "1.0.0",
+    "target_version": "1.0.0",
+    "tag": null,
+    "release_commit_message": null
+  },
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

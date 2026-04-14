@@ -1,0 +1,28 @@
+{
+  "name": "material-3-md3-workflows",
+  "version": "1.0.0",
+  "description": "Material Design 3 workflow plugin for Codex with Compose-first guidance, optional deterministic MCP support, and MD3 audit/remediation outputs.",
+  "author": {
+    "name": "CodexMD3",
+    "email": "noreply@example.invalid",
+    "url": "https://example.invalid/codexmd3"
+  },
+  "license": "MIT",
+  "keywords": ["material-design-3", "material-you", "compose", "flutter", "design-system", "audit"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Material 3 MD3 Workflows",
+    "shortDescription": "MD3 component, theme, layout, scaffold, and audit workflows",
+    "longDescription": "Repo-local Material Design 3 capability for Codex. Ships a canonical MD3 skill bundle, optional deterministic lookup/scoring MCP support, and release-proof packaging discipline.",
+    "developerName": "CodexMD3",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Audit"],
+    "defaultPrompt": [
+      "Design a Compose Material 3 screen shell for this feature.",
+      "Generate an MD3 theme scaffold from this seed color.",
+      "Audit this UI against Material Design 3 and suggest minimal fixes."
+    ],
+    "brandColor": "#6750A4"
+  }
+}

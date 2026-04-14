@@ -1,0 +1,22 @@
+.agents/skills/material-3/references/remediation-policy.md:29:- marking findings as resolved without fresh verification
+.agents/skills/material-3/SKILL.md:41:- `references/remediation-policy.md`: smallest safe MD3-correct fix policy.
+.agents/skills/material-3/SKILL.md:78:- `scorecard`
+.agents/skills/material-3/SKILL.md:79:- `findings`
+.agents/skills/material-3/SKILL.md:80:- `quick wins`
+.agents/skills/material-3/SKILL.md:81:- `remediation sequence`
+.agents/skills/material-3/SKILL.md:82:- `unresolved risks`
+.agents/skills/material-3/SKILL.md:97:- `Critical`
+.agents/skills/material-3/SKILL.md:98:- `High`
+.agents/skills/material-3/SKILL.md:99:- `Medium`
+.agents/skills/material-3/SKILL.md:100:- `Low`
+.agents/skills/material-3/SKILL.md:101:- `Note`
+.agents/skills/material-3/SKILL.md:113:Use the optional MCP layer for deterministic lookups, theme scaffolds, scorecards, and release consistency checks. Keep these activities in the skill reasoning layer:
+.agents/skills/material-3/SKILL.md:117:- prioritizing remediation sequence
+.agents/skills/material-3/references/audit-rubric.md:24:- quick wins
+.agents/skills/material-3/references/audit-rubric.md:25:- remediation sequence
+.agents/skills/material-3/references/audit-rubric.md:26:- unresolved risks
+.agents/skills/material-3/references/audit-rubric.md:43:- `Critical`: blocks safe release or breaks core MD3/a11y behavior
+.agents/skills/material-3/references/audit-rubric.md:44:- `High`: major MD3 deviation or systemic inconsistency
+.agents/skills/material-3/references/audit-rubric.md:45:- `Medium`: noticeable deviation with bounded scope
+.agents/skills/material-3/references/audit-rubric.md:46:- `Low`: minor deviation or polish issue
+.agents/skills/material-3/references/audit-rubric.md:47:- `Note`: informational or future-looking observation

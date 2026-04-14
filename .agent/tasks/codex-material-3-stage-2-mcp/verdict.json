@@ -1,0 +1,64 @@
+{
+  "task_id": "codex-material-3-stage-2-mcp",
+  "verifier_identity": "fresh-verifier",
+  "verdict": "PASS",
+  "summary": "The MD3 MCP layer is implemented as a deterministic, file-backed server with machine-readable contracts and reusable lookup/scoring outputs.",
+  "acceptance_criteria": [
+    {
+      "id": "AC2.1",
+      "status": "PASS",
+      "reason": "The server, README, and contracts are explicitly Material Design 3 specific and avoid generic frontend reasoning claims.",
+      "evidence_refs": [
+        "mcp/README.md",
+        "mcp/contracts/tool-contracts.json"
+      ]
+    },
+    {
+      "id": "AC2.2",
+      "status": "PASS",
+      "reason": "All seven required tools are implemented and exercised through raw machine-readable outputs.",
+      "evidence_refs": [
+        "mcp/server.py",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/component-catalog-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/platform-matrix-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/layout-rule-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json"
+      ]
+    },
+    {
+      "id": "AC2.3",
+      "status": "PASS",
+      "reason": "Tool boundaries are explicit: deterministic facts and scoring remain in MCP, while design judgment is reserved for the skill layer.",
+      "evidence_refs": [
+        "mcp/README.md",
+        "mcp/contracts/tool-contracts.json"
+      ]
+    },
+    {
+      "id": "AC2.4",
+      "status": "PASS",
+      "reason": "Tool outputs are structured JSON and reusable by evidence and release validation workflows.",
+      "evidence_refs": [
+        "mcp/cli.py",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json"
+      ]
+    },
+    {
+      "id": "AC2.5",
+      "status": "PASS",
+      "reason": "Release consistency checking is implemented and exercised against the current repo release surfaces.",
+      "evidence_refs": [
+        "mcp/domain.py",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json"
+      ]
+    }
+  ],
+  "release_checks": [],
+  "open_problems_count": 0,
+  "requires_fix": false,
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

@@ -1,0 +1,51 @@
+{
+  "overall_score": 97.5,
+  "grade": "A",
+  "category_scores": {
+    "color_tokens": 85.0,
+    "typography": 100.0,
+    "shape": 100.0,
+    "elevation_and_tonal_surfaces": 100.0,
+    "component_correctness": 100.0,
+    "layout_and_responsiveness": 100.0,
+    "navigation_patterns": 92.0,
+    "motion_and_interaction_guidance": 100.0,
+    "accessibility": 100.0,
+    "theming_consistency": 100.0
+  },
+  "severity_counts": {
+    "Critical": 0,
+    "High": 1,
+    "Medium": 1,
+    "Low": 0,
+    "Note": 0
+  },
+  "quick_wins": [
+    {
+      "id": "F2",
+      "title": "Navigation rail missing selected-state label emphasis",
+      "recommended_fix": "Use the MD3 selected rail item treatment and label style tokens."
+    }
+  ],
+  "remediation_sequence": [
+    {
+      "id": "F1",
+      "severity": "High",
+      "title": "Hard-coded brand blue bypasses MD3 primary role",
+      "recommended_fix": "Replace literal blue values with theme primary/container roles."
+    },
+    {
+      "id": "F2",
+      "severity": "Medium",
+      "title": "Navigation rail missing selected-state label emphasis",
+      "recommended_fix": "Use the MD3 selected rail item treatment and label style tokens."
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "id": "F1",
+      "title": "Hard-coded brand blue bypasses MD3 primary role",
+      "impact": "The screen breaks seeded theming and dark-theme consistency."
+    }
+  ]
+}

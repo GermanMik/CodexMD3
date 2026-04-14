@@ -1,0 +1,7 @@
+interface:
+  display_name: "Material 3"
+  short_description: "Compose-first MD3 design, scaffolding, and audit"
+  default_prompt: "Use $material-3 to design, scaffold, theme, or audit a Material Design 3 interface."
+
+policy:
+  allow_implicit_invocation: true

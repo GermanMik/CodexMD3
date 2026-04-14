@@ -1,0 +1,74 @@
+{
+  "task_id": "codex-material-3-stage-1-skill",
+  "verifier_identity": "fresh-verifier",
+  "verdict": "PASS",
+  "summary": "The canonical Material 3 skill is present, MD3-specific, mode-complete, and backed by the required reference corpus.",
+  "acceptance_criteria": [
+    {
+      "id": "AC1.1",
+      "status": "PASS",
+      "reason": "The canonical SKILL.md exists in the required path and frames the capability explicitly as Material Design 3 / Material You guidance.",
+      "evidence_refs": [
+        ".agents/skills/material-3/SKILL.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt"
+      ]
+    },
+    {
+      "id": "AC1.2",
+      "status": "PASS",
+      "reason": "The skill defines the five required modes and provides a decision path for selecting them.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-mode-check.txt",
+        ".agents/skills/material-3/SKILL.md"
+      ]
+    },
+    {
+      "id": "AC1.3",
+      "status": "PASS",
+      "reason": "The reference corpus covers tokens, components, theming, layout, audit, remediation, platform matrix, and release readiness.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/skill-file-check.txt"
+      ]
+    },
+    {
+      "id": "AC1.4",
+      "status": "PASS",
+      "reason": "Compose-first, Flutter-secondary, and Web-limited boundaries are explicitly documented in the skill and platform matrix reference.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/platform-boundaries-check.txt",
+        ".agents/skills/material-3/references/platform-matrix.md"
+      ]
+    },
+    {
+      "id": "AC1.5",
+      "status": "PASS",
+      "reason": "The audit rubric is MD3-specific and defines structured findings, categories, and the mandated severity model.",
+      "evidence_refs": [
+        ".agents/skills/material-3/references/audit-rubric.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt"
+      ]
+    },
+    {
+      "id": "AC1.6",
+      "status": "PASS",
+      "reason": "A dedicated remediation policy exists and explicitly prefers the smallest safe MD3-correct fix.",
+      "evidence_refs": [
+        ".agents/skills/material-3/references/remediation-policy.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt"
+      ]
+    },
+    {
+      "id": "AC1.7",
+      "status": "PASS",
+      "reason": "Audit mode output is contractually defined as scorecard, findings, quick wins, remediation sequence, and unresolved risks.",
+      "evidence_refs": [
+        ".agents/skills/material-3/SKILL.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/raw/audit-contract-check.txt"
+      ]
+    }
+  ],
+  "release_checks": [],
+  "open_problems_count": 0,
+  "requires_fix": false,
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

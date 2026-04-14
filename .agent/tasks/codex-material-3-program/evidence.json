@@ -1,0 +1,64 @@
+{
+  "task_id": "codex-material-3-program",
+  "builder_identity": "task-builder",
+  "commands": [
+    {
+      "cmd": "python scripts/sync_plugin_bundle.py",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+    },
+    {
+      "cmd": "python C:\\Users\\tikta\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .agents/skills/material-3",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt"
+    },
+    {
+      "cmd": "python mcp/cli.py theme-scaffold --seed-color \"#6750A4\" --platform compose --dark-mode paired --contrast standard --dynamic-color allowed",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json"
+    },
+    {
+      "cmd": "python scripts/validate_release.py --expected-version 1.0.0 --bump patch --release-notes .agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".agent/tasks/codex-material-3-program/raw/program-file-tree.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json",
+      "type": "json"
+    }
+  ],
+  "ac_map": {
+    "AC1": [".agent/tasks/codex-material-3-program/spec.md", ".agent/tasks/codex-material-3-program/raw/program-file-tree.txt"],
+    "AC2": [".agent/tasks/codex-material-3-stage-1-skill/evidence.md", ".agent/tasks/codex-material-3-stage-2-mcp/evidence.md", ".agent/tasks/codex-material-3-stage-3-plugin/evidence.md", ".agent/tasks/codex-material-3-stage-4-release/evidence.md"],
+    "AC3": [".agents/skills/material-3/SKILL.md", "plugin/.codex-plugin/plugin.json", "docs/packaging-sync-policy.md"],
+    "AC4": [".agent/tasks/codex-material-3-stage-1-skill/raw/quick-validate.txt", ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt", ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"],
+    "AC5": [".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"],
+    "AC6": [".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json", "docs/versioning-policy.md", "docs/release-policy.md"],
+    "AC7": [".agents/skills/material-3/SKILL.md", ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json"]
+  },
+  "release_metadata": {
+    "current_version": "1.0.0",
+    "target_version": "1.0.0",
+    "tag": "v1.0.0",
+    "release_commit_message": "release: v1.0.0"
+  },
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

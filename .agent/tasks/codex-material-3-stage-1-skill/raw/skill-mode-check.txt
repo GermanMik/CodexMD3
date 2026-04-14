@@ -1,0 +1,22 @@
+3:description: Design, scaffold, theme, adapt, and audit Material Design 3 / Material You user interfaces with a Compose-first workflow, Flutter-secondary implementation guidance, and limited Web token guidance. Use when Codex needs to choose or generate MD3 components, build or adapt MD3 themes, produce MD3 layout or navigation shells, scaffold MD3 screens, or run an MD3-specific compliance audit with concrete remediation.
+14:- Keep Web support limited to tokens, CSS architecture, and component guidance unless the user explicitly asks for a constrained web implementation.
+15:- Treat MD3 as personal, adaptive, and expressive: start from task intent, state, context, and device class before choosing components.
+21:- `component`: Choose, adapt, or validate one or more MD3 components.
+22:- `theme`: Generate or adjust MD3 theme tokens, tonal roles, dynamic color guidance, typography, shape, elevation, or contrast strategy.
+23:- `layout`: Choose responsive layout rules, breakpoints, window size behavior, edge-to-edge handling, or adaptive navigation.
+24:- `scaffold`: Assemble an app shell, screen skeleton, or navigation shell that follows MD3 structure.
+25:- `audit`: Score an existing screen or code path for MD3 compliance and propose the smallest safe fixes.
+27:If a request spans multiple areas, set a primary mode and a secondary mode. Example: a dashboard shell with theme polish is `scaffold` primary and `theme` secondary.
+34:- `references/component-catalog.md`: canonical component selection and state requirements.
+35:- `references/theming-and-dynamic-color.md`: seed color, dynamic color, dark theme guidance.
+38:- `references/layout-and-responsive.md`: window size classes, insets, foldables, adaptive shells.
+39:- `references/audit-rubric.md`: MD3 compliance categories, scoring, finding contract.
+49:- Name the recommended MD3 component or composition.
+56:- Produce role-level theme guidance: color roles, tonal surfaces, typography, shape, elevation, contrast, dark theme behavior.
+57:- Separate deterministic token scaffolding from subjective visual tuning.
+65:- Keep the layout shell MD3-compliant before tuning visual details.
+105:- Audit against MD3 tokens, components, theming, layout, and navigation rules, not against personal taste.
+109:- Do not recommend a rewrite when a token, component swap, state fix, or layout adjustment is enough.
+113:Use the optional MCP layer for deterministic lookups, theme scaffolds, scorecards, and release consistency checks. Keep these activities in the skill reasoning layer:
+115:- choosing the best component composition for ambiguous product intent
+126:- Do not claim MD3 compliance without explicit evidence or an audit pass.

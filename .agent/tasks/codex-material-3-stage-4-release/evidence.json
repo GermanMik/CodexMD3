@@ -1,0 +1,63 @@
+{
+  "task_id": "codex-material-3-stage-4-release",
+  "builder_identity": "task-builder",
+  "commands": [
+    {
+      "cmd": "python scripts/prepare_release.py --bump patch --dry-run",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-4-release/raw/release-version-check.txt"
+    },
+    {
+      "cmd": "python scripts/prepare_release.py --version 1.0.0 --dry-run --notes-out .agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md"
+    },
+    {
+      "cmd": "python scripts/validate_release.py --expected-version 1.0.0 --bump patch --release-notes .agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/release-version-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/changelog-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/tag-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/packaging-sync-check.txt",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md",
+      "type": "text"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json",
+      "type": "json"
+    }
+  ],
+  "ac_map": {
+    "AC4.1": ["docs/versioning-policy.md", "plugin/.codex-plugin/plugin.json"],
+    "AC4.2": ["docs/release-policy.md", "docs/release-checklist.md", ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"],
+    "AC4.3": ["CHANGELOG.md", ".agent/tasks/codex-material-3-stage-4-release/raw/changelog-check.txt"],
+    "AC4.4": ["docs/versioning-policy.md", ".agent/tasks/codex-material-3-stage-4-release/raw/tag-check.txt", ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"],
+    "AC4.5": ["docs/github-release-flow.md", ".github/workflows/publish-release.yml"],
+    "AC4.6": ["docs/packaging-sync-policy.md", ".agent/tasks/codex-material-3-stage-4-release/raw/packaging-sync-check.txt"],
+    "AC4.7": [".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json", "plugin/.codex-plugin/plugin.json", "mcp/manifest.json"]
+  },
+  "release_metadata": {
+    "current_version": "1.0.0",
+    "target_version": "1.0.0",
+    "tag": "v1.0.0",
+    "release_commit_message": "release: v1.0.0"
+  },
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

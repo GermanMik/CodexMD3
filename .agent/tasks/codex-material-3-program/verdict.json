@@ -1,0 +1,86 @@
+{
+  "task_id": "codex-material-3-program",
+  "verifier_identity": "fresh-verifier",
+  "verdict": "PASS",
+  "summary": "All four program stages pass verification, and the repository now contains a proof-driven MD3 capability with canonical skill, deterministic MCP layer, plugin packaging, and release workflow.",
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "status": "PASS",
+      "reason": "Parent and stage specs exist in the required task topology and follow the frozen-spec template.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-program/spec.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/spec.md",
+        ".agent/tasks/codex-material-3-stage-2-mcp/spec.md",
+        ".agent/tasks/codex-material-3-stage-3-plugin/spec.md",
+        ".agent/tasks/codex-material-3-stage-4-release/spec.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "status": "PASS",
+      "reason": "The repo contains the four required implementation stages and each stage now passes verification.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-stage-1-skill/verdict.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/verdict.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/verdict.json",
+        ".agent/tasks/codex-material-3-stage-4-release/verdict.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "status": "PASS",
+      "reason": "Source-of-truth boundaries are explicit across the canonical skill, bundled plugin copy, and release metadata surfaces.",
+      "evidence_refs": [
+        ".agents/skills/material-3/SKILL.md",
+        "plugin/.codex-plugin/plugin.json",
+        "docs/packaging-sync-policy.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "status": "PASS",
+      "reason": "The repo-task-proof-loop is implemented via specs, evidence, raw artifacts, verdicts, and problem logs for the parent and each stage.",
+      "evidence_refs": [
+        ".agent/tasks/codex-material-3-program/evidence.md",
+        ".agent/tasks/codex-material-3-stage-1-skill/evidence.md",
+        ".agent/tasks/codex-material-3-stage-2-mcp/evidence.md",
+        ".agent/tasks/codex-material-3-stage-3-plugin/evidence.md",
+        ".agent/tasks/codex-material-3-stage-4-release/evidence.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "status": "PASS",
+      "reason": "Packaging synchronization is defined, executable, and freshly proven via sync output.",
+      "evidence_refs": [
+        "scripts/sync_plugin_bundle.py",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+      ]
+    },
+    {
+      "id": "AC6",
+      "status": "PASS",
+      "reason": "Release readiness includes SemVer policy, changelog/tag/commit policy, GitHub release flow, dry-run support, and structured release checks.",
+      "evidence_refs": [
+        "docs/versioning-policy.md",
+        "docs/release-policy.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
+      ]
+    },
+    {
+      "id": "AC7",
+      "status": "PASS",
+      "reason": "The resulting capability remains explicitly MD3-focused and preserves component/theme/layout/scaffold/audit coverage without collapsing into a generic helper.",
+      "evidence_refs": [
+        ".agents/skills/material-3/SKILL.md",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json",
+        ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json"
+      ]
+    }
+  ],
+  "release_checks": [],
+  "open_problems_count": 0,
+  "requires_fix": false,
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

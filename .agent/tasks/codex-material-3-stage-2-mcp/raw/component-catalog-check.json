@@ -1,0 +1,19 @@
+{
+  "component": "navigation-rail",
+  "summary": "Medium-width primary navigation.",
+  "use_when": "Medium layouts benefit from a lateral nav spine.",
+  "avoid_when": "Compact width or permanent expanded drawer is a better fit.",
+  "required_states": [
+    "selected",
+    "unselected"
+  ],
+  "accessibility_notes": [
+    "Ensure destination order and labels remain scannable"
+  ],
+  "related_tokens": [
+    "surface",
+    "label-medium"
+  ],
+  "platform": "compose",
+  "platform_note": "Default medium-width navigation pattern."
+}

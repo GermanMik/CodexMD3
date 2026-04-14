@@ -1,0 +1,12 @@
+{
+  "category": "color",
+  "token": "primary",
+  "summary": "Primary accent role for key actions and highlighted states.",
+  "platform": "compose",
+  "platform_note": "Map to MaterialTheme.colorScheme.primary and its matching on/container roles.",
+  "related": [
+    "primary-container",
+    "on-primary",
+    "surface-tint"
+  ]
+}

@@ -1,0 +1,48 @@
+name: publish-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version to publish"
+        required: true
+      bump:
+        description: "Planning-only bump class for validation context"
+        required: false
+        default: "patch"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Update version-bearing files
+        run: python scripts/bump_version.py --version "${{ github.event.inputs.version }}"
+      - name: Sync plugin bundle
+        run: python scripts/sync_plugin_bundle.py
+      - name: Prepare release notes
+        run: python scripts/prepare_release.py --version "${{ github.event.inputs.version }}" --dry-run --notes-out .release-notes-draft.md
+      - name: Validate release
+        run: python scripts/validate_release.py --expected-version "${{ github.event.inputs.version }}" --bump "${{ github.event.inputs.bump }}" --release-notes .release-notes-draft.md
+      - name: Commit release metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add plugin/.codex-plugin/plugin.json mcp/manifest.json CHANGELOG.md plugin/skills/material-3 .release-notes-draft.md
+          git commit -m "release: v${{ github.event.inputs.version }}"
+          git tag "v${{ github.event.inputs.version }}"
+      - name: Push commit and tag
+        run: |
+          git push
+          git push origin "v${{ github.event.inputs.version }}"
+      - name: Publish GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "v${{ github.event.inputs.version }}" --title "v${{ github.event.inputs.version }}" --notes-file .release-notes-draft.md

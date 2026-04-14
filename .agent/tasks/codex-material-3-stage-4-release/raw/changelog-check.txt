@@ -1,0 +1,7 @@
+5:## [1.0.0] - 2026-04-14
+6:### Added
+11:### Changed
+14:### Fixed
+17:### Removed
+20:### Security
+23:### Migration Notes

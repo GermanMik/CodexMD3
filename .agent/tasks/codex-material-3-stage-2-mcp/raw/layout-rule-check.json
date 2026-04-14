@@ -1,0 +1,13 @@
+{
+  "rule": "adaptive-navigation",
+  "summary": "Adapt primary navigation from bar to rail to drawer as width and IA complexity increase.",
+  "platform": "compose",
+  "platform_note": "Canonical rule for MD3 navigation adaptation.",
+  "window_class_guidance": {
+    "compact": "navigation-bar",
+    "medium": "navigation-rail",
+    "expanded": "navigation-drawer or rail-plus-pane"
+  },
+  "selected_window_class": "medium",
+  "selected_guidance": "navigation-rail"
+}

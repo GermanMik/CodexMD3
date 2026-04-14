@@ -1,0 +1,264 @@
+{
+  "components": {
+    "buttons": {
+      "summary": "Primary, secondary, tertiary, outlined, and text actions.",
+      "use_when": "A user must trigger an explicit action.",
+      "avoid_when": "The control is actually a navigation destination or passive label.",
+      "required_states": ["default", "focused", "pressed", "disabled"],
+      "accessibility_notes": ["Preserve touch target size", "Use visible labels for critical actions"],
+      "related_tokens": ["primary", "label-large", "state-layers"],
+      "platform_notes": {
+        "compose": "Use Button, FilledTonalButton, OutlinedButton, or TextButton from Material 3.",
+        "flutter": "Use ElevatedButton, FilledButton, FilledButton.tonal, OutlinedButton, or TextButton with Material 3 theme.",
+        "web": "Map to semantic role tokens; avoid non-MD3 custom variants."
+      }
+    },
+    "icon-buttons": {
+      "summary": "Compact icon actions, including toggleable variants.",
+      "use_when": "A concise icon action is sufficient and discoverable.",
+      "avoid_when": "The action is critical and unlabeled or the icon is ambiguous.",
+      "required_states": ["default", "selected", "unselected", "disabled"],
+      "accessibility_notes": ["Provide accessible labels", "Use toggle semantics for toggled state"],
+      "related_tokens": ["primary", "state-layers"],
+      "platform_notes": {
+        "compose": "Use standard, filled, filled tonal, or outlined icon button variants as appropriate.",
+        "flutter": "Confirm variant parity and selected-state theming.",
+        "web": "Use clear labels and tokenized state feedback."
+      }
+    },
+    "text-fields": {
+      "summary": "Outlined or filled MD3 text input fields.",
+      "use_when": "A user must input or edit structured text.",
+      "avoid_when": "The task needs freeform document editing or a picker is more appropriate.",
+      "required_states": ["default", "focused", "error", "disabled"],
+      "accessibility_notes": ["Persistent label", "Error and helper text must remain readable"],
+      "related_tokens": ["outline", "title-large", "body-medium"],
+      "platform_notes": {
+        "compose": "Use Material 3 text field APIs and keep labels/error states tokenized.",
+        "flutter": "Use InputDecoration with Material 3 theme mapping.",
+        "web": "Mirror label and stroke behavior with semantic variables."
+      }
+    },
+    "cards": {
+      "summary": "Elevated, filled, or outlined grouping surface.",
+      "use_when": "Related information needs a shared surfaced container.",
+      "avoid_when": "Every list row is being cardified without hierarchy.",
+      "required_states": ["default", "focused", "pressed if clickable"],
+      "accessibility_notes": ["Preserve clear click target if interactive"],
+      "related_tokens": ["surface-container-highest", "corner-medium", "level1"],
+      "platform_notes": {
+        "compose": "Prefer FilledCard, ElevatedCard, or OutlinedCard semantics.",
+        "flutter": "Align card shape and tonal surfaces through theme tokens.",
+        "web": "Use semantic surface roles before custom shadows."
+      }
+    },
+    "chips": {
+      "summary": "Assist, filter, input, or suggestion chips.",
+      "use_when": "A light-weight selection, suggestion, or contextual action is needed.",
+      "avoid_when": "Primary navigation or high-emphasis primary action is required.",
+      "required_states": ["default", "selected when applicable", "disabled"],
+      "accessibility_notes": ["Ensure removable chips announce removal affordance"],
+      "related_tokens": ["corner-full", "label-large", "state-layers"],
+      "platform_notes": {
+        "compose": "Use chip family components with clear type selection.",
+        "flutter": "Map chip states carefully; variant APIs may differ.",
+        "web": "Keep them tokenized and do not repurpose as tabs by default."
+      }
+    },
+    "tabs": {
+      "summary": "Peer content switching within one context.",
+      "use_when": "A small set of sibling views exists within the same navigation location.",
+      "avoid_when": "The control is acting as global app navigation.",
+      "required_states": ["default", "selected", "focused"],
+      "accessibility_notes": ["Ensure tab semantics and keyboard navigation"],
+      "related_tokens": ["primary", "label-large", "state-layers"],
+      "platform_notes": {
+        "compose": "Use fixed vs scrollable tabs based on label count and width.",
+        "flutter": "Confirm indicator and label behavior with Material 3 theme.",
+        "web": "Use tabs only for peer panes, not top-level routing."
+      }
+    },
+    "top-app-bar": {
+      "summary": "Top anchored screen bar for title, context, and actions.",
+      "use_when": "A screen needs title hierarchy and leading/trailing actions.",
+      "avoid_when": "The screen is intentionally immersive and navigation-free.",
+      "required_states": ["rest", "scrolled if applicable"],
+      "accessibility_notes": ["Keep title and actions discoverable under edge-to-edge"],
+      "related_tokens": ["surface", "title-large", "level0"],
+      "platform_notes": {
+        "compose": "Choose small, center-aligned, medium, or large top app bar by hierarchy and scroll behavior.",
+        "flutter": "Large and medium variants may require composition rather than a single widget.",
+        "web": "Keep app bar semantics and spacing tokenized."
+      }
+    },
+    "bottom-app-bar": {
+      "summary": "Bottom action surface, often paired with a FAB.",
+      "use_when": "Persistent bottom actions matter more than destination switching.",
+      "avoid_when": "A navigation bar is the actual primary need.",
+      "required_states": ["rest", "fab integrated when present"],
+      "accessibility_notes": ["Preserve safe-area spacing and action spacing"],
+      "related_tokens": ["surface-container", "level1"],
+      "platform_notes": {
+        "compose": "Reserve for action-heavy flows, not generic navigation.",
+        "flutter": "Confirm FAB notch and spacing behavior.",
+        "web": "Use sparingly and keep insets explicit."
+      }
+    },
+    "navigation-bar": {
+      "summary": "Compact-width primary navigation for 3-5 destinations.",
+      "use_when": "Compact layouts need persistent top-level navigation.",
+      "avoid_when": "Destination count is high or width supports rail/drawer.",
+      "required_states": ["selected", "unselected"],
+      "accessibility_notes": ["Keep labels visible and selected state obvious"],
+      "related_tokens": ["surface-container", "label-medium"],
+      "platform_notes": {
+        "compose": "Default compact navigation pattern.",
+        "flutter": "Map label visibility and selected state to Material 3.",
+        "web": "Use only when responsive shell intentionally mirrors compact mobile behavior."
+      }
+    },
+    "navigation-rail": {
+      "summary": "Medium-width primary navigation.",
+      "use_when": "Medium layouts benefit from a lateral nav spine.",
+      "avoid_when": "Compact width or permanent expanded drawer is a better fit.",
+      "required_states": ["selected", "unselected"],
+      "accessibility_notes": ["Ensure destination order and labels remain scannable"],
+      "related_tokens": ["surface", "label-medium"],
+      "platform_notes": {
+        "compose": "Default medium-width navigation pattern.",
+        "flutter": "Use when adaptive layout reaches rail territory.",
+        "web": "Use only for app-shell patterns with clear responsive behavior."
+      }
+    },
+    "navigation-drawer": {
+      "summary": "Modal or permanent drawer for expanded navigation or grouped destinations.",
+      "use_when": "Expanded widths or complex IA need grouped destinations.",
+      "avoid_when": "A small set of destinations already fits a rail or bar.",
+      "required_states": ["selected", "open", "closed"],
+      "accessibility_notes": ["Preserve focus behavior for modal drawers"],
+      "related_tokens": ["surface-container-low", "title-medium"],
+      "platform_notes": {
+        "compose": "Prefer permanent drawer on expanded widths when justified.",
+        "flutter": "Choose modal vs standard behavior explicitly.",
+        "web": "Ensure drawer usage is tied to shell adaptation, not legacy sidebars."
+      }
+    },
+    "fab": {
+      "summary": "Floating action button for the highest-priority action.",
+      "use_when": "One creation or forward action dominates the screen.",
+      "avoid_when": "Multiple actions compete or a normal button is sufficient.",
+      "required_states": ["rest", "expanded when applicable"],
+      "accessibility_notes": ["Label expanded FABs or provide accessible tooltip text"],
+      "related_tokens": ["primary-container", "level3", "corner-large"],
+      "platform_notes": {
+        "compose": "Standard, small, large, and extended variants are available.",
+        "flutter": "Map tonal treatment and motion to Material 3 behavior.",
+        "web": "Use only when the layout meaningfully supports it."
+      }
+    },
+    "dialog": {
+      "summary": "Blocking confirmation or short focused task surface.",
+      "use_when": "The user must resolve a focused decision or small task before continuing.",
+      "avoid_when": "The task requires long-form interaction or full context.",
+      "required_states": ["open", "dismissable or blocking"],
+      "accessibility_notes": ["Trap focus correctly", "Preserve title and action semantics"],
+      "related_tokens": ["surface-container-high", "level3", "title-large"],
+      "platform_notes": {
+        "compose": "Use alert dialogs for simple confirmations and custom dialogs for bounded custom content.",
+        "flutter": "Keep shape, tonal surface, and action hierarchy aligned.",
+        "web": "Respect focus trapping and accessible dismissal."
+      }
+    },
+    "bottom-sheet": {
+      "summary": "Supplemental sheet for supporting actions or short subflows.",
+      "use_when": "Supplemental content or action groups should emerge from the bottom edge.",
+      "avoid_when": "A menu or full screen is the clearer mental model.",
+      "required_states": ["collapsed or hidden", "expanded", "dismissed"],
+      "accessibility_notes": ["Preserve dismissal semantics and avoid clipping content under insets"],
+      "related_tokens": ["surface-container-high", "level2", "corner-extra-large"],
+      "platform_notes": {
+        "compose": "Distinguish modal vs standard sheets clearly.",
+        "flutter": "Confirm snap and drag behavior in Material 3 mode.",
+        "web": "Use sparingly and keep responsive behavior explicit."
+      }
+    },
+    "snackbar": {
+      "summary": "Transient feedback surface with optional action.",
+      "use_when": "The user needs brief confirmation or reversible feedback.",
+      "avoid_when": "The message is critical, persistent, or needs full explanation.",
+      "required_states": ["shown", "dismissed"],
+      "accessibility_notes": ["Action must remain reachable and announce correctly"],
+      "related_tokens": ["inverse-surface", "inverse-primary"],
+      "platform_notes": {
+        "compose": "Keep queueing and scaffold host behavior predictable.",
+        "flutter": "Align action emphasis with inverse roles.",
+        "web": "Ensure contrast and timing remain accessible."
+      }
+    },
+    "lists": {
+      "summary": "Standardized list rows for repeated items.",
+      "use_when": "A collection of similar items needs a scan-friendly structure.",
+      "avoid_when": "Each item is unique enough to need a bespoke layout.",
+      "required_states": ["default", "selected when applicable", "focused"],
+      "accessibility_notes": ["Keep row semantics and tap targets coherent"],
+      "related_tokens": ["body-medium", "surface"],
+      "platform_notes": {
+        "compose": "Prefer list rows before bespoke card stacks.",
+        "flutter": "Use list tiles or custom rows with MD3 tokens preserved.",
+        "web": "Keep list density and separators tokenized."
+      }
+    },
+    "menus": {
+      "summary": "Anchored action or selection menu.",
+      "use_when": "A compact overflow or anchored action list is needed.",
+      "avoid_when": "The action set is primary enough to deserve visible buttons.",
+      "required_states": ["open", "hover if applicable", "selected when applicable"],
+      "accessibility_notes": ["Keyboard navigation and dismissal must be explicit"],
+      "related_tokens": ["surface-container-high", "label-large"],
+      "platform_notes": {
+        "compose": "Use anchored menus with clear dismissal behavior.",
+        "flutter": "Verify Material 3 styling for popup or dropdown menu choices.",
+        "web": "Avoid role confusion with custom popovers."
+      }
+    },
+    "progress-indicators": {
+      "summary": "Determinate or indeterminate progress affordances.",
+      "use_when": "Task progress or wait state must be communicated.",
+      "avoid_when": "The user only needs static status text.",
+      "required_states": ["determinate or indeterminate", "stopped"],
+      "accessibility_notes": ["Expose progress semantics where applicable"],
+      "related_tokens": ["primary", "surface"],
+      "platform_notes": {
+        "compose": "Choose linear vs circular by context and available space.",
+        "flutter": "Keep motion and semantics aligned with system expectations.",
+        "web": "Respect reduced-motion and semantic progress roles."
+      }
+    },
+    "date-time-pickers": {
+      "summary": "Date and time selection surfaces.",
+      "use_when": "Temporal input is a first-class task.",
+      "avoid_when": "A simple preset or non-editable date is enough.",
+      "required_states": ["default", "input fallback when applicable", "error when invalid"],
+      "accessibility_notes": ["Preserve locale and timezone clarity where relevant"],
+      "related_tokens": ["title-large", "surface-container-high"],
+      "platform_notes": {
+        "compose": "Use only when the platform and library surface provide the needed control.",
+        "flutter": "Confirm Material 3 styling and locale behavior.",
+        "web": "Prefer guidance over claiming full parity."
+      }
+    },
+    "data-display-patterns": {
+      "summary": "Key-value, metric, and dense display patterns grounded in MD3 tokens.",
+      "use_when": "Structured information must be scanned quickly.",
+      "avoid_when": "A freeform illustration-first layout is the real requirement.",
+      "required_states": ["default", "loading if applicable"],
+      "accessibility_notes": ["Maintain reading order and heading hierarchy"],
+      "related_tokens": ["headline-small", "body-medium", "surface-container-low"],
+      "platform_notes": {
+        "compose": "Compose metrics and key-value patterns from standard surfaces and type roles.",
+        "flutter": "Use existing MD3 surfaces rather than inventing custom dashboard atoms first.",
+        "web": "Keep token and hierarchy usage explicit."
+      }
+    }
+  }
+}

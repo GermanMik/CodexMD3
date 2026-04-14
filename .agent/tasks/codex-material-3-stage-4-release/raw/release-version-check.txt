@@ -1,0 +1,10 @@
+{
+  "dry_run": true,
+  "current_version": "1.0.0",
+  "target_version": "1.0.1",
+  "bump": "patch",
+  "prerelease": null,
+  "release_commit_message": "release: v1.0.1",
+  "tag": "v1.0.1",
+  "notes_path": null
+}

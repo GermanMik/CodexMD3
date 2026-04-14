@@ -1,0 +1,37 @@
+name: release-validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Sync bundle check
+        run: python scripts/sync_plugin_bundle.py --check
+      - name: Prepare release notes draft
+        run: |
+          VERSION=$(python - <<'PY'
+          import json
+          from pathlib import Path
+          print(json.loads(Path('plugin/.codex-plugin/plugin.json').read_text())['version'])
+          PY
+          )
+          python scripts/prepare_release.py --version "$VERSION" --dry-run --notes-out .release-notes-draft.md
+      - name: Validate release surfaces
+        run: |
+          VERSION=$(python - <<'PY'
+          import json
+          from pathlib import Path
+          print(json.loads(Path('plugin/.codex-plugin/plugin.json').read_text())['version'])
+          PY
+          )
+          python scripts/validate_release.py --expected-version "$VERSION" --bump patch --release-notes .release-notes-draft.md

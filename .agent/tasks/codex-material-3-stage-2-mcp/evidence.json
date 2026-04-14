@@ -1,0 +1,75 @@
+{
+  "task_id": "codex-material-3-stage-2-mcp",
+  "builder_identity": "task-builder",
+  "commands": [
+    {
+      "cmd": "python mcp/cli.py lookup-token --category color --token-name primary",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json"
+    },
+    {
+      "cmd": "python mcp/cli.py lookup-component --component navigation-rail --platform compose",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/component-catalog-check.json"
+    },
+    {
+      "cmd": "python mcp/cli.py theme-scaffold --seed-color \"#6750A4\" --platform compose --dark-mode paired --contrast standard --dynamic-color allowed",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json"
+    },
+    {
+      "cmd": "python mcp/cli.py score-audit --findings-file .agent/tasks/codex-material-3-stage-2-mcp/raw/sample-findings.json",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json"
+    },
+    {
+      "cmd": "python mcp/cli.py check-release-consistency --expected-version 1.0.0 --release-notes .agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/component-catalog-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/platform-matrix-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/layout-rule-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json",
+      "type": "json"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json",
+      "type": "json"
+    }
+  ],
+  "ac_map": {
+    "AC2.1": ["mcp/README.md", "mcp/contracts/tool-contracts.json"],
+    "AC2.2": ["mcp/server.py", ".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/component-catalog-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/platform-matrix-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/layout-rule-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/theme-scaffold-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json"],
+    "AC2.3": ["mcp/README.md", "mcp/contracts/tool-contracts.json"],
+    "AC2.4": [".agent/tasks/codex-material-3-stage-2-mcp/raw/token-lookup-check.json", ".agent/tasks/codex-material-3-stage-2-mcp/raw/md3-audit-score.json", "mcp/cli.py"],
+    "AC2.5": [".agent/tasks/codex-material-3-stage-2-mcp/raw/release-consistency-check.json", "mcp/domain.py"]
+  },
+  "release_metadata": {
+    "current_version": "1.0.0",
+    "target_version": "1.0.0",
+    "tag": null,
+    "release_commit_message": null
+  },
+  "timestamp": "2026-04-14T19:50:30+03:00"
+}

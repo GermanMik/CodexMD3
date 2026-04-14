@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "current_version": "1.0.0",
+  "expected_version": "1.0.0",
+  "next_version_plan": "1.0.1",
+  "release_commit_message": "release: v1.0.0",
+  "target_tag": "v1.0.0",
+  "release_consistency": {
+    "status": "PASS",
+    "current_version": "1.0.0",
+    "expected_version": "1.0.0",
+    "target_tag": "v1.0.0",
+    "checks": [
+      {
+        "id": "current_version_detected",
+        "status": "PASS",
+        "reason": "Detected plugin version 1.0.0."
+      },
+      {
+        "id": "expected_version_alignment",
+        "status": "PASS",
+        "reason": "Expected version 1.0.0 matches plugin and MCP metadata."
+      },
+      {
+        "id": "version_surface_alignment",
+        "status": "PASS",
+        "reason": "Plugin manifest, MCP manifest, and CHANGELOG are aligned."
+      },
+      {
+        "id": "required_release_docs",
+        "status": "PASS",
+        "reason": "All required release docs are present."
+      },
+      {
+        "id": "plugin_mcp_present",
+        "status": "PASS",
+        "reason": "Bundled plugin MCP config exists."
+      },
+      {
+        "id": "marketplace_present",
+        "status": "PASS",
+        "reason": "Marketplace metadata exists."
+      },
+      {
+        "id": "bundle_sync",
+        "status": "PASS",
+        "reason": "Bundled skill matches the canonical skill."
+      },
+      {
+        "id": "release_commit_policy",
+        "status": "PASS",
+        "reason": "Release commit message 'release: v1.0.0' matches policy."
+      },
+      {
+        "id": "tag_policy",
+        "status": "PASS",
+        "reason": "Tag 'v1.0.0' matches policy."
+      },
+      {
+        "id": "release_notes",
+        "status": "PASS",
+        "reason": "Release notes draft references version 1.0.0."
+      }
+    ],
+    "drift_detected": false
+  },
+  "release_checks": [
+    {
+      "id": "RC1",
+      "status": "PASS",
+      "reason": "Detected plugin version 1.0.0."
+    },
+    {
+      "id": "RC2",
+      "status": "PASS",
+      "reason": "Next version plan is 1.0.1 from current version 1.0.0."
+    },
+    {
+      "id": "RC3",
+      "status": "PASS",
+      "reason": "Version-bearing files align with the expected release surface."
+    },
+    {
+      "id": "RC4",
+      "status": "PASS",
+      "reason": "CHANGELOG contains the release version header."
+    },
+    {
+      "id": "RC5",
+      "status": "PASS",
+      "reason": "Release commit message 'release: v1.0.0' matches policy."
+    },
+    {
+      "id": "RC6",
+      "status": "PASS",
+      "reason": "Tag 'v1.0.0' matches policy."
+    },
+    {
+      "id": "RC7",
+      "status": "PASS",
+      "reason": "Release notes draft references version 1.0.0."
+    },
+    {
+      "id": "RC8",
+      "status": "PASS",
+      "reason": "Plugin and MCP metadata are aligned with the expected release version."
+    },
+    {
+      "id": "RC9",
+      "status": "PASS",
+      "reason": "No version or bundle drift detected across release surfaces."
+    },
+    {
+      "id": "RC10",
+      "status": "PASS",
+      "reason": "Bundled skill matches the canonical skill."
+    },
+    {
+      "id": "RC11",
+      "status": "PASS",
+      "reason": "GitHub release publication path is documented and workflow-backed."
+    },
+    {
+      "id": "RC12",
+      "status": "PASS",
+      "reason": "Post-release verification is defined in release policy and checklist."
+    }
+  ]
+}
