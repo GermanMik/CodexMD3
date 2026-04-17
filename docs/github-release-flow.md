@@ -13,7 +13,9 @@
 3. push commit and tag
 4. create GitHub Release titled `vX.Y.Z`
 5. use the validated release notes draft
-6. run post-release verification
+6. run `python scripts/stage4_release_proof.py build --expected-version <version> --release-notes <path>`
+7. run `python scripts/stage4_release_proof.py verify`
+8. commit the post-release proof artifacts
 
 ## Reproducibility
 

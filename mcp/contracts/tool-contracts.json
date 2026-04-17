@@ -1,6 +1,6 @@
 {
   "server": "material-3-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "proof_loop_expectations": {
     "raw_artifact_format": "json",
     "builder_outputs_are_evidence_only": true,

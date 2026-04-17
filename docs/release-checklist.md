@@ -32,6 +32,8 @@
 
 ## Post-release
 
+- `python scripts/stage4_release_proof.py build --expected-version <version> --release-notes <path>`
+- `python scripts/stage4_release_proof.py verify`
 - published tag matches manifest and changelog
 - GitHub Release body matches draft
 - rollback path recorded if a hotfix is needed

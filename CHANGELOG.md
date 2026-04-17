@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2026-04-17
+### Added
+- Repo-local `scripts/stage4_release_proof.py` builder/verifier harness for `codex-material-3-stage-4-release`.
+
+### Changed
+- Release policy, checklist, and GitHub release flow now require stage-4 post-release proof commands and repo-local raw evidence before publication sign-off.
+
+### Fixed
+- Stage-4 release verification no longer depends on manual evidence refresh or self-certifying publication checks.
+
+### Removed
+- None.
+
+### Security
+- None.
+
+### Migration Notes
+- Run `python scripts/stage4_release_proof.py build --expected-version <version> --release-notes <path>` followed by `python scripts/stage4_release_proof.py verify` after GitHub Release publication.
+
 ## [1.0.2] - 2026-04-17
 ### Added
 - Repo-local `scripts/stage3_plugin_proof.py` builder/verifier harness for `codex-material-3-stage-3-plugin`.

@@ -23,6 +23,7 @@ All release work follows `spec freeze -> build -> evidence -> fresh verify -> mi
 - No release with bundle drift.
 - No release without a release notes draft.
 - No release with unresolved FAIL on required release checks.
+- No publication sign-off without fresh stage-4 build/verify proof captured in repo-local raw evidence by different builder and verifier identities.
 
 ## Dry-run default
 

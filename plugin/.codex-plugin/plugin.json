@@ -1,6 +1,6 @@
 {
   "name": "material-3-md3-workflows",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Material Design 3 workflow plugin for Codex with Compose-first guidance, optional deterministic MCP support, and MD3 audit/remediation outputs.",
   "author": {
     "name": "CodexMD3",
