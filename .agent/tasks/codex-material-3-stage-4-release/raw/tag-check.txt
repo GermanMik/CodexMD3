@@ -1,5 +1,7 @@
-current_version=1.0.0
-release_commit=release: v1.0.0
-tag=v1.0.0
+current_version=1.0.1
+release_commit=release: v1.0.1
+tag=v1.0.1
+tag_commit=e4e6a2a10048378d77cc1abf17f71587d8a8aaf4
+head_commit=e4e6a2a10048378d77cc1abf17f71587d8a8aaf4
 commit_matches=True
 tag_matches=True

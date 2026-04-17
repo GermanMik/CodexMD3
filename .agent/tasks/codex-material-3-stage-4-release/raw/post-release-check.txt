@@ -1,5 +1,5 @@
-head_commit=7da2b7e0b5e4bbc98dabc09c19a8cc9325117834
-tag_commit=7da2b7e0b5e4bbc98dabc09c19a8cc9325117834
+head_commit=e4e6a2a10048378d77cc1abf17f71587d8a8aaf4
+tag_commit=e4e6a2a10048378d77cc1abf17f71587d8a8aaf4
 tag_matches_head=True
-release_url=https://github.com/GermanMik/CodexMD3/releases/tag/v1.0.0
-remote_tag=bab9c2d1b5c209aea7b0814c1e8d5b5c6a5e8d91	refs/tags/v1.0.0
+release_url=https://github.com/GermanMik/CodexMD3/releases/tag/v1.0.1
+remote_tag=e4e6a2a10048378d77cc1abf17f71587d8a8aaf4	refs/tags/v1.0.1
