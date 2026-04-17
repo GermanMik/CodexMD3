@@ -1,53 +1,110 @@
 {
   "task_id": "codex-material-3-stage-3-plugin",
-  "builder_identity": "task-builder",
+  "builder_identity": "stage3-plugin-builder",
+  "proof_policy": {
+    "raw_artifact_format": "json",
+    "builder_outputs_are_evidence_only": true,
+    "builder_identity_must_differ_from_verifier": true,
+    "requires_fresh_verification": true
+  },
   "commands": [
+    {
+      "cmd": "python scripts/sync_plugin_bundle.py",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-run.json"
+    },
     {
       "cmd": "python scripts/sync_plugin_bundle.py --check",
       "exit_code": 0,
-      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-check.json"
     },
     {
       "cmd": "Get-Content -Raw plugin/.codex-plugin/plugin.json",
       "exit_code": 0,
       "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"
+    },
+    {
+      "cmd": "Get-Content -Raw plugin/.mcp.json",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"
+    },
+    {
+      "cmd": "Get-Content -Raw .agents/plugins/marketplace.json",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"
+    },
+    {
+      "cmd": "Get-ChildItem -Recurse .agents/skills/material-3,plugin/skills/material-3",
+      "exit_code": 0,
+      "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json"
     }
   ],
   "artifacts": [
     {
-      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt",
-      "type": "text"
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-run.json",
+      "type": "json",
+      "sha256": "466c7e9aaa94351b1d92b9d6d36ed2da265aa81279a5cf8b40a012aac5ce1e58"
+    },
+    {
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-check.json",
+      "type": "json",
+      "sha256": "b453e6d359bc96439c5ce482e3f973927b53e2cdc9a63dfd466f5e7f1332d1b0"
     },
     {
       "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json",
-      "type": "json"
+      "type": "json",
+      "sha256": "e1c08d4e6da3ae3b60001eed2f76ab875dafa7d3ec0bca865df0011b51ed6a18"
     },
     {
       "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json",
-      "type": "json"
+      "type": "json",
+      "sha256": "e9918d1021846a2ca1f1fe76188f1bc7e6036d61514b7c51a3b8a1eb97743d6b"
     },
     {
       "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json",
-      "type": "json"
+      "type": "json",
+      "sha256": "c69e225d8109f7b886433ee80434ccb8cbf76be535edb732d4a4cf0954e62b14"
     },
     {
-      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt",
-      "type": "text"
+      "path": ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json",
+      "type": "json",
+      "sha256": "b43a7a58c773ffbb8041157ddee512c5e26cd3b287a9e53a51ff0d843f6a62e3"
     }
   ],
   "ac_map": {
-    "AC3.1": ["plugin/.codex-plugin/plugin.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"],
-    "AC3.2": [".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt"],
-    "AC3.3": ["plugin/README.md", "docs/packaging-sync-policy.md"],
-    "AC3.4": ["plugin/.mcp.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"],
-    "AC3.5": [".agents/plugins/marketplace.json", ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"],
-    "AC3.6": [".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt", "docs/packaging-sync-policy.md", "scripts/sync_plugin_bundle.py"]
+    "AC3.1": [
+      "plugin/.codex-plugin/plugin.json",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"
+    ],
+    "AC3.2": [
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json"
+    ],
+    "AC3.3": [
+      "plugin/README.md",
+      "docs/packaging-sync-policy.md"
+    ],
+    "AC3.4": [
+      "plugin/.mcp.json",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"
+    ],
+    "AC3.5": [
+      ".agents/plugins/marketplace.json",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"
+    ],
+    "AC3.6": [
+      "scripts/sync_plugin_bundle.py",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-run.json",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-check.json",
+      ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json",
+      "docs/packaging-sync-policy.md"
+    ]
   },
   "release_metadata": {
-    "current_version": "1.0.0",
-    "target_version": "1.0.0",
-    "tag": null,
-    "release_commit_message": null
+    "current_version": "1.0.2",
+    "target_version": "1.0.2",
+    "tag": "v1.0.2",
+    "release_commit_message": "release: v1.0.2"
   },
-  "timestamp": "2026-04-14T19:50:30+03:00"
+  "git_head": "7b584f621662eda3a0b98d2f3bbc523afcc116a1",
+  "timestamp": "2026-04-17T07:16:54+03:00"
 }

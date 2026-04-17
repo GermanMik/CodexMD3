@@ -1,0 +1,118 @@
+{
+  "source_root": ".agents/skills/material-3",
+  "target_root": "plugin/skills/material-3",
+  "source_exists": true,
+  "target_exists": true,
+  "matches": true,
+  "source_files": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "cf59a02aed2c38a0fd46bd4af871bf11f96ea310ec5b1a1f25b6c82d3f8308a4"
+    },
+    {
+      "path": "references/audit-rubric.md",
+      "sha256": "aa12b4d807904ed88780d2594a8b4578f95c35ea11d364ec98623ab91f99e91f"
+    },
+    {
+      "path": "references/color-system.md",
+      "sha256": "11688e41f51a7e94e858230cc0a16e9b32d20b3e11e69e6c593917b996614da0"
+    },
+    {
+      "path": "references/component-catalog.md",
+      "sha256": "901fbad96aba20b2aeb8f6e4531562282ae8a72dbd41fffcb031d937962bea46"
+    },
+    {
+      "path": "references/layout-and-responsive.md",
+      "sha256": "1064977a82db1f23dd63a564b286b2f30d6d529c400d730cda5113f0ca0ac2cd"
+    },
+    {
+      "path": "references/navigation-patterns.md",
+      "sha256": "cd8eb028f83a2cf1a37609734b1a50f9e297c93992cac3ba6c4a8071b266bbc0"
+    },
+    {
+      "path": "references/platform-matrix.md",
+      "sha256": "678a4200a11bf311287e06478d43896e0c163ceb917cd191efeff877014b4701"
+    },
+    {
+      "path": "references/release-readiness.md",
+      "sha256": "1684b4452ad043a859903488d4f5c786cb1ad0f5ea2379ad8fc01d25055cf04d"
+    },
+    {
+      "path": "references/remediation-policy.md",
+      "sha256": "ba606a550aabcab7ddf0868dbb83f56958dbf8d550fb7d9b320995f89e669bc8"
+    },
+    {
+      "path": "references/theming-and-dynamic-color.md",
+      "sha256": "41667317536267063cd99c3af51c4252ef393e24d8d106741c611c37fe36a3c2"
+    },
+    {
+      "path": "references/typography-and-shape.md",
+      "sha256": "6c9c18978b9210c210856f67727f705eac9829d4106d870cbdf2adfb533934b6"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "2dfee1066c8ede702e1cce856191aac022e688570359ca611092b50e8c3e7ce7"
+    },
+    {
+      "path": "USAGE.md",
+      "sha256": "5e240969aa702ed04802e70b12724f82525bb571fc9ebc6d64636364b2ab154b"
+    }
+  ],
+  "target_files": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "cf59a02aed2c38a0fd46bd4af871bf11f96ea310ec5b1a1f25b6c82d3f8308a4"
+    },
+    {
+      "path": "references/audit-rubric.md",
+      "sha256": "aa12b4d807904ed88780d2594a8b4578f95c35ea11d364ec98623ab91f99e91f"
+    },
+    {
+      "path": "references/color-system.md",
+      "sha256": "11688e41f51a7e94e858230cc0a16e9b32d20b3e11e69e6c593917b996614da0"
+    },
+    {
+      "path": "references/component-catalog.md",
+      "sha256": "901fbad96aba20b2aeb8f6e4531562282ae8a72dbd41fffcb031d937962bea46"
+    },
+    {
+      "path": "references/layout-and-responsive.md",
+      "sha256": "1064977a82db1f23dd63a564b286b2f30d6d529c400d730cda5113f0ca0ac2cd"
+    },
+    {
+      "path": "references/navigation-patterns.md",
+      "sha256": "cd8eb028f83a2cf1a37609734b1a50f9e297c93992cac3ba6c4a8071b266bbc0"
+    },
+    {
+      "path": "references/platform-matrix.md",
+      "sha256": "678a4200a11bf311287e06478d43896e0c163ceb917cd191efeff877014b4701"
+    },
+    {
+      "path": "references/release-readiness.md",
+      "sha256": "1684b4452ad043a859903488d4f5c786cb1ad0f5ea2379ad8fc01d25055cf04d"
+    },
+    {
+      "path": "references/remediation-policy.md",
+      "sha256": "ba606a550aabcab7ddf0868dbb83f56958dbf8d550fb7d9b320995f89e669bc8"
+    },
+    {
+      "path": "references/theming-and-dynamic-color.md",
+      "sha256": "41667317536267063cd99c3af51c4252ef393e24d8d106741c611c37fe36a3c2"
+    },
+    {
+      "path": "references/typography-and-shape.md",
+      "sha256": "6c9c18978b9210c210856f67727f705eac9829d4106d870cbdf2adfb533934b6"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "2dfee1066c8ede702e1cce856191aac022e688570359ca611092b50e8c3e7ce7"
+    },
+    {
+      "path": "USAGE.md",
+      "sha256": "5e240969aa702ed04802e70b12724f82525bb571fc9ebc6d64636364b2ab154b"
+    }
+  ],
+  "missing_in_target": [],
+  "extra_in_target": [],
+  "content_mismatches": []
+}

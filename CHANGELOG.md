@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2026-04-17
+### Added
+- Repo-local `scripts/stage3_plugin_proof.py` builder/verifier harness for `codex-material-3-stage-3-plugin`.
+
+### Changed
+- Refreshed stage-3 packaging evidence to use JSON raw artifacts for plugin manifest, bundled MCP config, marketplace metadata, and canonical-to-bundle hash reports.
+
+### Fixed
+- Fresh stage-3 verification now proves bundled-skill sync against the canonical source instead of relying on stale PowerShell-formatted file listings.
+
+### Removed
+- None.
+
+### Security
+- No credentials or external tokens are stored in repo artifacts.
+
+### Migration Notes
+- Run `python scripts/stage3_plugin_proof.py build` followed by `python scripts/stage3_plugin_proof.py verify` before marking `codex-material-3-stage-3-plugin` complete.
+
 ## [1.0.1] - 2026-04-17
 ### Added
 - Repo-local `scripts/stage2_mcp_proof.py` builder/verifier harness for `codex-material-3-stage-2-mcp`.

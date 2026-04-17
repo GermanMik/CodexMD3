@@ -1,0 +1,40 @@
+{
+  "source_exists": true,
+  "target_exists": true,
+  "matches": true,
+  "source_files": [
+    "SKILL.md",
+    "USAGE.md",
+    "agents/openai.yaml",
+    "references/audit-rubric.md",
+    "references/color-system.md",
+    "references/component-catalog.md",
+    "references/layout-and-responsive.md",
+    "references/navigation-patterns.md",
+    "references/platform-matrix.md",
+    "references/release-readiness.md",
+    "references/remediation-policy.md",
+    "references/theming-and-dynamic-color.md",
+    "references/typography-and-shape.md"
+  ],
+  "target_files": [
+    "SKILL.md",
+    "USAGE.md",
+    "agents/openai.yaml",
+    "references/audit-rubric.md",
+    "references/color-system.md",
+    "references/component-catalog.md",
+    "references/layout-and-responsive.md",
+    "references/navigation-patterns.md",
+    "references/platform-matrix.md",
+    "references/release-readiness.md",
+    "references/remediation-policy.md",
+    "references/theming-and-dynamic-color.md",
+    "references/typography-and-shape.md"
+  ],
+  "missing_in_target": [],
+  "extra_in_target": [],
+  "content_mismatches": [],
+  "mode": "sync",
+  "status": "PASS"
+}

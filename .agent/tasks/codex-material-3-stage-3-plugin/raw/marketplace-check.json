@@ -1,21 +1,12 @@
 {
-  "name": "codex-material-3-local",
-  "interface": {
-    "displayName": "Codex Material 3 Local Marketplace"
+  "name": "material-3-md3-workflows",
+  "source": {
+    "source": "local",
+    "path": "./plugin"
   },
-  "plugins": [
-    {
-      "name": "material-3-md3-workflows",
-      "source": {
-        "source": "local",
-        "path": "./plugin"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    }
-  ]
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Productivity"
 }
-

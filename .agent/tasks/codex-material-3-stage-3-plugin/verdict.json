@@ -1,13 +1,13 @@
 {
   "task_id": "codex-material-3-stage-3-plugin",
-  "verifier_identity": "fresh-verifier",
+  "verifier_identity": "stage3-plugin-fresh-verifier",
   "verdict": "PASS",
-  "summary": "The plugin bundle, marketplace entry, bundled MCP config, and sync path are present and internally consistent with the canonical skill boundary.",
+  "summary": "Fresh verification confirms the installable MD3 plugin bundle, marketplace entry, optional MCP config, and canonical-to-bundle sync proof satisfy the stage-3 task.",
   "acceptance_criteria": [
     {
       "id": "AC3.1",
       "status": "PASS",
-      "reason": "The plugin manifest exists and positions the bundle as an MD3 workflow plugin for Codex.",
+      "reason": "The plugin manifest exists and positions the bundle as a Material 3 workflow plugin for Codex.",
       "evidence_refs": [
         "plugin/.codex-plugin/plugin.json",
         ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-manifest-check.json"
@@ -16,24 +16,25 @@
     {
       "id": "AC3.2",
       "status": "PASS",
-      "reason": "The bundled skill copy exists under plugin/skills/material-3.",
+      "reason": "The bundled skill copy exists under plugin/skills/material-3 and is populated with the expected files.",
       "evidence_refs": [
-        ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundled-skill-file-list.txt"
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json"
       ]
     },
     {
       "id": "AC3.3",
       "status": "PASS",
-      "reason": "The repo documents the bundled skill as a packaging artifact and keeps canonical authoring in .agents/skills/material-3.",
+      "reason": "Docs explicitly describe plugin/skills/material-3 as a derived packaging artifact and preserve canonical authoring in .agents/skills/material-3.",
       "evidence_refs": [
         "plugin/README.md",
-        "docs/packaging-sync-policy.md"
+        "docs/packaging-sync-policy.md",
+        ".agents/skills/material-3/SKILL.md"
       ]
     },
     {
       "id": "AC3.4",
       "status": "PASS",
-      "reason": "Bundled MCP configuration exists and is explicitly documented as repo-local deterministic support.",
+      "reason": "Bundled MCP configuration exists and remains explicitly optional while targeting the repo-local MD3 server.",
       "evidence_refs": [
         "plugin/.mcp.json",
         ".agent/tasks/codex-material-3-stage-3-plugin/raw/plugin-mcp-check.json"
@@ -42,7 +43,7 @@
     {
       "id": "AC3.5",
       "status": "PASS",
-      "reason": "A local marketplace example exists and points to the repo-local plugin bundle.",
+      "reason": "A local marketplace entry exists and points to the repo-local plugin bundle.",
       "evidence_refs": [
         ".agents/plugins/marketplace.json",
         ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json"
@@ -51,16 +52,21 @@
     {
       "id": "AC3.6",
       "status": "PASS",
-      "reason": "Packaging sync rules are documented and the sync check proves the bundle matches canonical source state.",
+      "reason": "Packaging sync rules are documented and fresh verification proves the bundled skill matches the canonical source with no stale files.",
       "evidence_refs": [
         "scripts/sync_plugin_bundle.py",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-run.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/bundle-sync-check.json",
+        ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json",
         "docs/packaging-sync-policy.md",
-        ".agent/tasks/codex-material-3-stage-3-plugin/raw/packaging-sync-check.txt"
+        ".agent\\tasks\\codex-material-3-stage-3-plugin\\evidence.json"
       ]
     }
   ],
   "release_checks": [],
   "open_problems_count": 0,
   "requires_fix": false,
-  "timestamp": "2026-04-14T19:50:30+03:00"
+  "source_evidence_timestamp": "2026-04-17T07:16:54+03:00",
+  "source_git_head": "7b584f621662eda3a0b98d2f3bbc523afcc116a1",
+  "timestamp": "2026-04-17T07:16:59+03:00"
 }
