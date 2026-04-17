@@ -1,68 +1,183 @@
 {
   "server": "material-3-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "proof_loop_expectations": {
+    "raw_artifact_format": "json",
+    "builder_outputs_are_evidence_only": true,
+    "builder_identity_must_differ_from_verifier": true,
+    "requires_fresh_verification": true,
+    "skill_layer_owns": [
+      "reasoning",
+      "remediation_prioritization",
+      "tradeoff_explanation",
+      "release_decision_judgment"
+    ]
+  },
   "tools": [
     {
       "name": "lookup_md3_token",
       "purpose": "Return structured MD3 token guidance by semantic category and token identifier.",
       "input_schema": {
         "type": "object",
-        "required": ["category"],
+        "required": [
+          "category"
+        ],
         "properties": {
-          "category": { "type": "string" },
-          "token_name": { "type": ["string", "null"] },
-          "platform": { "type": "string", "enum": ["compose", "flutter", "web"] },
-          "include_related": { "type": "boolean" }
+          "category": {
+            "type": "string"
+          },
+          "token_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "compose",
+              "flutter",
+              "web"
+            ]
+          },
+          "include_related": {
+            "type": "boolean"
+          }
         }
       },
       "output_schema": {
         "type": "object",
-        "required": ["category", "platform"],
+        "required": [
+          "category",
+          "platform"
+        ],
         "properties": {
-          "category": { "type": "string" },
-          "token": { "type": "string" },
-          "summary": { "type": "string" },
-          "platform": { "type": "string" },
-          "platform_note": { "type": "string" },
-          "related": { "type": "array", "items": { "type": "string" } },
-          "tokens": { "type": "array", "items": { "type": "object" } }
+          "category": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "platform_note": {
+            "type": "string"
+          },
+          "related": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tokens": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
-      "deterministic_boundaries": ["Reads only file-backed token data", "Does not choose between multiple valid design strategies"],
-      "error_model": ["Unknown category", "Unknown token", "Unsupported platform"],
+      "deterministic_boundaries": [
+        "Reads only file-backed token data",
+        "Does not choose between multiple valid design strategies"
+      ],
+      "error_model": [
+        "Unknown category",
+        "Unknown token",
+        "Unsupported platform"
+      ],
       "idempotency": "Pure lookup; repeated identical inputs return identical outputs.",
-      "skill_layer_responsibility": ["Choosing the best token strategy for product intent", "Explaining tradeoffs and remediation"]
+      "skill_layer_responsibility": [
+        "Choosing the best token strategy for product intent",
+        "Explaining tradeoffs and remediation"
+      ]
     },
     {
       "name": "lookup_md3_component",
       "purpose": "Return canonical component guidance, required states, accessibility notes, and platform deltas.",
       "input_schema": {
         "type": "object",
-        "required": ["component_id"],
+        "required": [
+          "component_id"
+        ],
         "properties": {
-          "component_id": { "type": "string" },
-          "platform": { "type": "string", "enum": ["compose", "flutter", "web"] }
+          "component_id": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "compose",
+              "flutter",
+              "web"
+            ]
+          }
         }
       },
       "output_schema": {
         "type": "object",
-        "required": ["component", "summary", "required_states", "platform_note"],
+        "required": [
+          "component",
+          "summary",
+          "required_states",
+          "platform_note"
+        ],
         "properties": {
-          "component": { "type": "string" },
-          "summary": { "type": "string" },
-          "use_when": { "type": "string" },
-          "avoid_when": { "type": "string" },
-          "required_states": { "type": "array", "items": { "type": "string" } },
-          "accessibility_notes": { "type": "array", "items": { "type": "string" } },
-          "related_tokens": { "type": "array", "items": { "type": "string" } },
-          "platform": { "type": "string" },
-          "platform_note": { "type": "string" }
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "use_when": {
+            "type": "string"
+          },
+          "avoid_when": {
+            "type": "string"
+          },
+          "required_states": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accessibility_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_tokens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "platform": {
+            "type": "string"
+          },
+          "platform_note": {
+            "type": "string"
+          }
         }
       },
-      "deterministic_boundaries": ["Returns stored MD3 component facts only", "Does not compose complex user flows"],
-      "error_model": ["Unknown component", "Unsupported platform"],
+      "deterministic_boundaries": [
+        "Returns stored MD3 component facts only",
+        "Does not compose complex user flows"
+      ],
+      "error_model": [
+        "Unknown component",
+        "Unsupported platform"
+      ],
       "idempotency": "Pure lookup; no side effects.",
-      "skill_layer_responsibility": ["Selecting the correct composition of components", "Deciding when to break ties between valid patterns"]
+      "skill_layer_responsibility": [
+        "Selecting the correct composition of components",
+        "Deciding when to break ties between valid patterns"
+      ]
     },
     {
       "name": "get_platform_matrix",
@@ -70,103 +185,264 @@
       "input_schema": {
         "type": "object",
         "properties": {
-          "topic": { "type": ["string", "null"] }
+          "topic": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       },
       "output_schema": {
         "type": "object"
       },
-      "deterministic_boundaries": ["Returns a static capability matrix"],
-      "error_model": ["Unknown topic"],
+      "deterministic_boundaries": [
+        "Returns a static capability matrix"
+      ],
+      "error_model": [
+        "Unknown topic"
+      ],
       "idempotency": "Pure lookup; no side effects.",
-      "skill_layer_responsibility": ["Choosing how platform constraints affect design decisions"]
+      "skill_layer_responsibility": [
+        "Choosing how platform constraints affect design decisions"
+      ]
     },
     {
       "name": "get_layout_rule",
       "purpose": "Return responsive layout, window class, edge-to-edge, and adaptive navigation rules.",
       "input_schema": {
         "type": "object",
-        "required": ["rule_id"],
+        "required": [
+          "rule_id"
+        ],
         "properties": {
-          "rule_id": { "type": "string" },
-          "platform": { "type": "string", "enum": ["compose", "flutter", "web"] },
-          "window_class": { "type": ["string", "null"] }
+          "rule_id": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "compose",
+              "flutter",
+              "web"
+            ]
+          },
+          "window_class": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       },
       "output_schema": {
         "type": "object",
-        "required": ["rule", "summary", "platform_note", "window_class_guidance"],
+        "required": [
+          "rule",
+          "summary",
+          "platform_note",
+          "window_class_guidance"
+        ],
         "properties": {
-          "rule": { "type": "string" },
-          "summary": { "type": "string" },
-          "platform": { "type": "string" },
-          "platform_note": { "type": "string" },
-          "window_class_guidance": { "type": "object" },
-          "selected_window_class": { "type": "string" },
-          "selected_guidance": { "type": "string" }
+          "rule": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "platform_note": {
+            "type": "string"
+          },
+          "window_class_guidance": {
+            "type": "object"
+          },
+          "selected_window_class": {
+            "type": "string"
+          },
+          "selected_guidance": {
+            "type": "string"
+          }
         }
       },
-      "deterministic_boundaries": ["Returns stored layout rules only", "Does not invent product-specific layout hierarchy"],
-      "error_model": ["Unknown rule", "Unsupported platform", "Unknown window class"],
+      "deterministic_boundaries": [
+        "Returns stored layout rules only",
+        "Does not invent product-specific layout hierarchy"
+      ],
+      "error_model": [
+        "Unknown rule",
+        "Unsupported platform",
+        "Unknown window class"
+      ],
       "idempotency": "Pure lookup; no side effects.",
-      "skill_layer_responsibility": ["Choosing the final shell for the user's task"]
+      "skill_layer_responsibility": [
+        "Choosing the final shell for the user's task"
+      ]
     },
     {
       "name": "generate_theme_scaffold",
       "purpose": "Generate deterministic token scaffolds from seed inputs for MD3 themes.",
       "input_schema": {
         "type": "object",
-        "required": ["seed_color"],
+        "required": [
+          "seed_color"
+        ],
         "properties": {
-          "seed_color": { "type": "string" },
-          "platform": { "type": "string", "enum": ["compose", "flutter", "web"] },
-          "dark_mode": { "type": "string", "enum": ["paired", "light-only", "dark-only"] },
-          "contrast": { "type": "string", "enum": ["standard", "high"] },
-          "dynamic_color": { "type": "string", "enum": ["required", "allowed", "forbidden"] }
+          "seed_color": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "compose",
+              "flutter",
+              "web"
+            ]
+          },
+          "dark_mode": {
+            "type": "string",
+            "enum": [
+              "paired",
+              "light-only",
+              "dark-only"
+            ]
+          },
+          "contrast": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "high"
+            ]
+          },
+          "dynamic_color": {
+            "type": "string",
+            "enum": [
+              "required",
+              "allowed",
+              "forbidden"
+            ]
+          }
         }
       },
       "output_schema": {
         "type": "object",
-        "required": ["seed_color", "platform", "palettes", "roles", "typography", "shape", "elevation"],
+        "required": [
+          "seed_color",
+          "platform",
+          "palettes",
+          "roles",
+          "typography",
+          "shape",
+          "elevation"
+        ],
         "properties": {
-          "seed_color": { "type": "string" },
-          "platform": { "type": "string" },
-          "dynamic_color": { "type": "string" },
-          "dark_mode": { "type": "string" },
-          "contrast": { "type": "string" },
-          "palettes": { "type": "object" },
-          "roles": { "type": "object" },
-          "typography": { "type": "object" },
-          "shape": { "type": "object" },
-          "elevation": { "type": "object" },
-          "notes": { "type": "array", "items": { "type": "string" } }
+          "seed_color": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "dynamic_color": {
+            "type": "string"
+          },
+          "dark_mode": {
+            "type": "string"
+          },
+          "contrast": {
+            "type": "string"
+          },
+          "palettes": {
+            "type": "object"
+          },
+          "roles": {
+            "type": "object"
+          },
+          "typography": {
+            "type": "object"
+          },
+          "shape": {
+            "type": "object"
+          },
+          "elevation": {
+            "type": "object"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
-      "deterministic_boundaries": ["Derives scaffold tokens mechanically from inputs", "Does not make subjective brand or product decisions"],
-      "error_model": ["Malformed hex seed color", "Unsupported platform", "Unsupported dark mode or dynamic color policy"],
+      "deterministic_boundaries": [
+        "Derives scaffold tokens mechanically from inputs",
+        "Does not make subjective brand or product decisions"
+      ],
+      "error_model": [
+        "Malformed hex seed color",
+        "Unsupported platform",
+        "Unsupported dark mode or dynamic color policy"
+      ],
       "idempotency": "Pure transform; identical inputs return identical outputs.",
-      "skill_layer_responsibility": ["Approving dynamic-color policy", "Final aesthetic tuning", "Choosing product-specific emphasis levels"]
+      "skill_layer_responsibility": [
+        "Approving dynamic-color policy",
+        "Final aesthetic tuning",
+        "Choosing product-specific emphasis levels"
+      ]
     },
     {
       "name": "score_md3_audit",
       "purpose": "Convert structured findings into a reproducible MD3 scorecard.",
       "input_schema": {
         "type": "object",
-        "required": ["findings"],
+        "required": [
+          "findings"
+        ],
         "properties": {
           "findings": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "title", "severity", "category", "impact", "recommended_fix", "confidence"],
+              "required": [
+                "id",
+                "title",
+                "severity",
+                "category",
+                "impact",
+                "recommended_fix",
+                "confidence"
+              ],
               "properties": {
-                "id": { "type": "string" },
-                "title": { "type": "string" },
-                "severity": { "type": "string", "enum": ["Critical", "High", "Medium", "Low", "Note"] },
-                "category": { "type": "string" },
-                "impact": { "type": "string" },
-                "recommended_fix": { "type": "string" },
-                "confidence": { "type": "number" }
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "Critical",
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Note"
+                  ]
+                },
+                "category": {
+                  "type": "string"
+                },
+                "impact": {
+                  "type": "string"
+                },
+                "recommended_fix": {
+                  "type": "string"
+                },
+                "confidence": {
+                  "type": "number"
+                }
               }
             }
           }
@@ -174,21 +450,62 @@
       },
       "output_schema": {
         "type": "object",
-        "required": ["overall_score", "grade", "category_scores", "severity_counts", "quick_wins", "remediation_sequence", "unresolved_risks"],
+        "required": [
+          "overall_score",
+          "grade",
+          "category_scores",
+          "severity_counts",
+          "quick_wins",
+          "remediation_sequence",
+          "unresolved_risks"
+        ],
         "properties": {
-          "overall_score": { "type": "number" },
-          "grade": { "type": "string" },
-          "category_scores": { "type": "object" },
-          "severity_counts": { "type": "object" },
-          "quick_wins": { "type": "array", "items": { "type": "object" } },
-          "remediation_sequence": { "type": "array", "items": { "type": "object" } },
-          "unresolved_risks": { "type": "array", "items": { "type": "object" } }
+          "overall_score": {
+            "type": "number"
+          },
+          "grade": {
+            "type": "string"
+          },
+          "category_scores": {
+            "type": "object"
+          },
+          "severity_counts": {
+            "type": "object"
+          },
+          "quick_wins": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "remediation_sequence": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "unresolved_risks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
-      "deterministic_boundaries": ["Scores only the findings provided", "Does not inspect the repository or invent findings"],
-      "error_model": ["Unknown severity", "Unknown category"],
+      "deterministic_boundaries": [
+        "Scores only the findings provided",
+        "Does not inspect the repository or invent findings"
+      ],
+      "error_model": [
+        "Unknown severity",
+        "Unknown category"
+      ],
       "idempotency": "Pure scoring; identical findings yield identical scorecards.",
-      "skill_layer_responsibility": ["Finding generation", "Evidence collection", "Choosing the remediation narrative"]
+      "skill_layer_responsibility": [
+        "Finding generation",
+        "Evidence collection",
+        "Choosing the remediation narrative"
+      ]
     },
     {
       "name": "check_md3_release_consistency",
@@ -196,28 +513,93 @@
       "input_schema": {
         "type": "object",
         "properties": {
-          "expected_version": { "type": ["string", "null"] },
-          "target_tag": { "type": ["string", "null"] },
-          "release_commit_message": { "type": ["string", "null"] },
-          "release_notes_path": { "type": ["string", "null"] }
+          "expected_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_tag": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "release_commit_message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "release_notes_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       },
       "output_schema": {
         "type": "object",
-        "required": ["status", "current_version", "checks", "drift_detected"],
+        "required": [
+          "status",
+          "current_version",
+          "checks",
+          "drift_detected"
+        ],
         "properties": {
-          "status": { "type": "string", "enum": ["PASS", "FAIL"] },
-          "current_version": { "type": ["string", "null"] },
-          "expected_version": { "type": ["string", "null"] },
-          "target_tag": { "type": ["string", "null"] },
-          "checks": { "type": "array", "items": { "type": "object" } },
-          "drift_detected": { "type": "boolean" }
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL"
+            ]
+          },
+          "current_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_tag": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "drift_detected": {
+            "type": "boolean"
+          }
         }
       },
-      "deterministic_boundaries": ["Reads only repo-local files and compares them mechanically", "Does not publish releases or mutate git state"],
-      "error_model": ["Missing required files", "Version drift", "Bundle mismatch", "Invalid tag or release commit format"],
+      "deterministic_boundaries": [
+        "Reads only repo-local files and compares them mechanically",
+        "Does not publish releases or mutate git state"
+      ],
+      "error_model": [
+        "Missing required files",
+        "Version drift",
+        "Bundle mismatch",
+        "Invalid tag or release commit format"
+      ],
       "idempotency": "Pure repository check; no side effects.",
-      "skill_layer_responsibility": ["Choosing the next version bump", "Interpreting release scope", "Deciding whether a failure warrants rollback or hotfix"]
+      "skill_layer_responsibility": [
+        "Choosing the next version bump",
+        "Interpreting release scope",
+        "Deciding whether a failure warrants rollback or hotfix"
+      ]
     }
   ]
 }

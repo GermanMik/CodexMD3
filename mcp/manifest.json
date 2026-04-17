@@ -1,6 +1,6 @@
 {
   "name": "material-3-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deterministic Material Design 3 lookup, scaffold, scoring, and release-consistency support for Codex.",
   "source_of_truth": {
     "skill": ".agents/skills/material-3",

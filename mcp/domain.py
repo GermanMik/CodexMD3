@@ -401,6 +401,7 @@ def check_md3_release_consistency(
     config = json.loads((root / "mcp" / "data" / "release-surface.json").read_text(encoding="utf-8"))
     current_version = _extract_version(root / config["canonical_version_file"])
     mcp_version = _extract_version(root / "mcp" / "manifest.json")
+    contracts_version = _extract_version(root / "mcp" / "contracts" / "tool-contracts.json")
     changelog_version = _extract_version(root / "CHANGELOG.md")
     release_commit_message = release_commit_message or (f"release: v{expected_version or current_version}" if current_version else None)
     target_tag = target_tag or (f"v{expected_version or current_version}" if current_version else None)
@@ -416,17 +417,25 @@ def check_md3_release_consistency(
         add_check("current_version_detected", "FAIL", "Could not detect current plugin version.")
 
     if expected_version:
-        if expected_version == current_version == mcp_version:
-            add_check("expected_version_alignment", "PASS", f"Expected version {expected_version} matches plugin and MCP metadata.")
+        if expected_version == current_version == mcp_version == contracts_version:
+            add_check("expected_version_alignment", "PASS", f"Expected version {expected_version} matches plugin, MCP manifest, and MCP contracts metadata.")
         else:
-            add_check("expected_version_alignment", "FAIL", f"Expected version {expected_version} does not match plugin ({current_version}) and MCP ({mcp_version}) metadata.")
+            add_check(
+                "expected_version_alignment",
+                "FAIL",
+                f"Expected version {expected_version} does not match plugin ({current_version}), MCP manifest ({mcp_version}), and MCP contracts ({contracts_version}) metadata.",
+            )
     else:
         add_check("expected_version_alignment", "PASS", "No explicit expected version was requested.")
 
-    if current_version and current_version == mcp_version == changelog_version:
-        add_check("version_surface_alignment", "PASS", "Plugin manifest, MCP manifest, and CHANGELOG are aligned.")
+    if current_version and current_version == mcp_version == contracts_version == changelog_version:
+        add_check("version_surface_alignment", "PASS", "Plugin manifest, MCP manifest, MCP contracts, and CHANGELOG are aligned.")
     else:
-        add_check("version_surface_alignment", "FAIL", f"Version drift detected: plugin={current_version}, mcp={mcp_version}, changelog={changelog_version}.")
+        add_check(
+            "version_surface_alignment",
+            "FAIL",
+            f"Version drift detected: plugin={current_version}, mcp={mcp_version}, contracts={contracts_version}, changelog={changelog_version}.",
+        )
 
     missing_docs = [doc for doc in config["required_docs"] if not (root / doc).exists()]
     if missing_docs:
@@ -484,6 +493,7 @@ def check_md3_release_consistency(
     return {
         "status": overall_status,
         "current_version": current_version,
+        "contracts_version": contracts_version,
         "expected_version": expected_version,
         "target_tag": target_tag,
         "checks": checks,

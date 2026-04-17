@@ -126,6 +126,8 @@ Use the optional MCP layer for deterministic lookups, theme scaffolds, scorecard
 - prioritizing remediation sequence
 - explaining tradeoffs to the user
 - turning deterministic facts into context-aware design recommendations
+- storing proof-loop raw JSON outputs and requiring a fresh verifier pass before marking the task complete
+- treating `score_md3_audit` and `check_md3_release_consistency` as evidence inputs, not self-certifying verdicts
 
 ## Anti-drift rules
 

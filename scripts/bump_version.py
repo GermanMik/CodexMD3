@@ -54,10 +54,11 @@ def main() -> int:
     root = get_repo_root()
     plugin_manifest_path = root / "plugin" / ".codex-plugin" / "plugin.json"
     mcp_manifest_path = root / "mcp" / "manifest.json"
+    contracts_path = root / "mcp" / "contracts" / "tool-contracts.json"
     changelog_path = root / "CHANGELOG.md"
 
     if args.dry_run:
-        print(f"Would set plugin and MCP manifest versions to {args.version} and ensure changelog entry on {args.date}.")
+        print(f"Would set plugin, MCP manifest, and MCP contracts versions to {args.version} and ensure changelog entry on {args.date}.")
         return 0
 
     plugin_manifest = load_json(plugin_manifest_path)
@@ -67,6 +68,10 @@ def main() -> int:
     mcp_manifest = load_json(mcp_manifest_path)
     mcp_manifest["version"] = args.version
     save_json(mcp_manifest_path, mcp_manifest)
+
+    contracts_manifest = load_json(contracts_path)
+    contracts_manifest["version"] = args.version
+    save_json(contracts_path, contracts_manifest)
 
     _ensure_changelog_entry(changelog_path, args.version, args.date)
     print(f"Updated version-bearing files to {args.version}.")

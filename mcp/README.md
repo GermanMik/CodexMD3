@@ -18,10 +18,12 @@ Deterministic support layer for the repo-local Material Design 3 capability. Thi
 - product-specific design judgment
 - narrative remediation prioritization
 - generic frontend audits
+- task verdict authorship or self-certification
 
 ## Tool contracts
 
 The machine-readable source of truth is `mcp/contracts/tool-contracts.json`. Human-readable tool boundaries are summarized below.
+Builder outputs are evidence, not certification. Store raw JSON outputs in repo-local task directories and require a fresh verifier pass before treating any stage as complete.
 
 ### `lookup_md3_token`
 
@@ -92,6 +94,22 @@ The machine-readable source of truth is `mcp/contracts/tool-contracts.json`. Hum
 - Error model: missing files, drift, invalid patterns, bundle mismatch.
 - Idempotency: pure repository check.
 - Keep in skill layer: deciding bump semantics, rollout timing, and rollback strategy.
+
+## Proof Loop
+
+Use the stage-2 proof harness to keep raw JSON artifacts in repo and separate builder work from verifier work:
+
+```powershell
+python scripts/stage2_mcp_proof.py build --expected-version 1.0.1 --release-notes .agent/tasks/codex-material-3-stage-4-release/raw/release-notes-draft.md
+python scripts/stage2_mcp_proof.py verify
+```
+
+Proof-loop expectations:
+
+- raw MCP artifacts stay as JSON under `.agent/tasks/codex-material-3-stage-2-mcp/raw/`
+- the builder identity must differ from the verifier identity
+- a fresh verifier pass is required after evidence collection
+- skill-layer reasoning and remediation remain outside MCP, even when `score_md3_audit` or `check_md3_release_consistency` returns `PASS`
 
 ## CLI harness
 

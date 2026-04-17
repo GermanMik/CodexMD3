@@ -3,6 +3,7 @@
   "version_bearing_files": [
     "plugin/.codex-plugin/plugin.json",
     "mcp/manifest.json",
+    "mcp/contracts/tool-contracts.json",
     "CHANGELOG.md"
   ],
   "required_docs": [

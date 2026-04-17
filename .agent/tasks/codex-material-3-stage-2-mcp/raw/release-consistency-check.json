@@ -1,23 +1,24 @@
 {
   "status": "PASS",
-  "current_version": "1.0.0",
-  "expected_version": "1.0.0",
-  "target_tag": "v1.0.0",
+  "current_version": "1.0.1",
+  "contracts_version": "1.0.1",
+  "expected_version": "1.0.1",
+  "target_tag": "v1.0.1",
   "checks": [
     {
       "id": "current_version_detected",
       "status": "PASS",
-      "reason": "Detected plugin version 1.0.0."
+      "reason": "Detected plugin version 1.0.1."
     },
     {
       "id": "expected_version_alignment",
       "status": "PASS",
-      "reason": "Expected version 1.0.0 matches plugin and MCP metadata."
+      "reason": "Expected version 1.0.1 matches plugin, MCP manifest, and MCP contracts metadata."
     },
     {
       "id": "version_surface_alignment",
       "status": "PASS",
-      "reason": "Plugin manifest, MCP manifest, and CHANGELOG are aligned."
+      "reason": "Plugin manifest, MCP manifest, MCP contracts, and CHANGELOG are aligned."
     },
     {
       "id": "required_release_docs",
@@ -42,17 +43,17 @@
     {
       "id": "release_commit_policy",
       "status": "PASS",
-      "reason": "Release commit message 'release: v1.0.0' matches policy."
+      "reason": "Release commit message 'release: v1.0.1' matches policy."
     },
     {
       "id": "tag_policy",
       "status": "PASS",
-      "reason": "Tag 'v1.0.0' matches policy."
+      "reason": "Tag 'v1.0.1' matches policy."
     },
     {
       "id": "release_notes",
       "status": "PASS",
-      "reason": "Release notes draft references version 1.0.0."
+      "reason": "Release notes draft references version 1.0.1."
     }
   ],
   "drift_detected": false

@@ -8,6 +8,7 @@
 
 - `plugin/.codex-plugin/plugin.json`
 - `mcp/manifest.json`
+- `mcp/contracts/tool-contracts.json`
 - `CHANGELOG.md`
 - Git tag name
 - GitHub Release title and notes draft
