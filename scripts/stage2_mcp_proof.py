@@ -183,7 +183,7 @@ def _build_evidence_markdown(evidence: dict[str, Any]) -> str:
             "## Acceptance criteria mapping",
             "- AC2.1 -> `mcp/README.md`, `mcp/contracts/tool-contracts.json`",
             "- AC2.2 -> `mcp/server.py`, `raw/*.json`",
-            "- AC2.3 -> `mcp/README.md`, `.agents/skills/material-3/SKILL.md`, `mcp/contracts/tool-contracts.json`",
+            "- AC2.3 -> `mcp/README.md`, `.agents/skills/material/SKILL.md`, `mcp/contracts/tool-contracts.json`",
             "- AC2.4 -> `evidence.json`, `raw/*.json`, `mcp/cli.py`",
             "- AC2.5 -> `raw/release-consistency-check.json`, `mcp/domain.py`",
             "",
@@ -242,7 +242,7 @@ def build(expected_version: str | None, release_notes: str, builder_identity: st
         "ac_map": {
             "AC2.1": ["mcp/README.md", "mcp/contracts/tool-contracts.json"],
             "AC2.2": ["mcp/server.py", *[artifact["path"] for artifact in artifacts]],
-            "AC2.3": ["mcp/README.md", ".agents/skills/material-3/SKILL.md", "mcp/contracts/tool-contracts.json"],
+            "AC2.3": ["mcp/README.md", ".agents/skills/material/SKILL.md", "mcp/contracts/tool-contracts.json"],
             "AC2.4": ["mcp/cli.py", "mcp/contracts/tool-contracts.json", *[artifact["path"] for artifact in artifacts]],
             "AC2.5": [release_command["artifact"], "mcp/domain.py"],
         },
@@ -275,7 +275,7 @@ def _artifact_map(artifacts: list[dict[str, Any]]) -> dict[str, Path]:
 def verify(verifier_identity: str) -> int:
     evidence = _load_json(EVIDENCE_JSON)
     readme_text = (ROOT / "mcp" / "README.md").read_text(encoding="utf-8")
-    skill_text = (ROOT / ".agents" / "skills" / "material-3" / "SKILL.md").read_text(encoding="utf-8")
+    skill_text = (ROOT / ".agents" / "skills" / "material" / "SKILL.md").read_text(encoding="utf-8")
     server_text = (ROOT / "mcp" / "server.py").read_text(encoding="utf-8")
     contracts = _load_json(ROOT / "mcp" / "contracts" / "tool-contracts.json")
     contract_names = {tool["name"] for tool in contracts["tools"]}
@@ -373,7 +373,7 @@ def verify(verifier_identity: str) -> int:
                 if ac23_pass
                 else "Boundary docs or proof-loop policy do not clearly separate MCP determinism from skill-layer judgment."
             ),
-            "evidence_refs": ["mcp/README.md", ".agents/skills/material-3/SKILL.md", "mcp/contracts/tool-contracts.json", str(EVIDENCE_JSON.relative_to(ROOT))],
+            "evidence_refs": ["mcp/README.md", ".agents/skills/material/SKILL.md", "mcp/contracts/tool-contracts.json", str(EVIDENCE_JSON.relative_to(ROOT))],
         }
     )
 

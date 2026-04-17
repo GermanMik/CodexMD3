@@ -1,5 +1,5 @@
 ---
-name: material-3
+name: material
 description: Design, scaffold, theme, adapt, and audit Material Design 3 / Material You user interfaces with a Compose-first workflow, Flutter-secondary implementation guidance, and limited Web token guidance. Use when Codex needs to choose or generate MD3 components, build or adapt MD3 themes, produce MD3 layout or navigation shells, scaffold MD3 screens, or run an MD3-specific compliance audit with concrete remediation.
 ---
 

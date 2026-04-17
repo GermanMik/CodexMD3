@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add plugin/.codex-plugin/plugin.json mcp/manifest.json CHANGELOG.md plugin/skills/material-3 .release-notes-draft.md
+          git add plugin/.codex-plugin/plugin.json mcp/manifest.json CHANGELOG.md plugin/skills/material .release-notes-draft.md
           git commit -m "release: v${{ github.event.inputs.version }}"
           git tag "v${{ github.event.inputs.version }}"
       - name: Push commit and tag

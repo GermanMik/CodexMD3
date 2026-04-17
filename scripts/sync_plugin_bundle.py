@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / ".agents" / "skills" / "material-3"
-TARGET = ROOT / "plugin" / "skills" / "material-3"
+SOURCE = ROOT / ".agents" / "skills" / "material"
+TARGET = ROOT / "plugin" / "skills" / "material"
 
 
 def _hash_directory(path: Path) -> dict[str, str]:

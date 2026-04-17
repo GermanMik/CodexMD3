@@ -3,8 +3,8 @@
   "version": "1.0.3",
   "description": "Deterministic Material Design 3 lookup, scaffold, scoring, and release-consistency support for Codex.",
   "source_of_truth": {
-    "skill": ".agents/skills/material-3",
-    "plugin_bundle": "plugin/skills/material-3",
+    "skill": ".agents/skills/material",
+    "plugin_bundle": "plugin/skills/material",
     "contracts": "mcp/contracts/tool-contracts.json"
   },
   "tool_count": 7

@@ -14,8 +14,8 @@
     "docs/github-release-flow.md",
     "docs/packaging-sync-policy.md"
   ],
-  "canonical_skill": ".agents/skills/material-3",
-  "bundled_skill": "plugin/skills/material-3",
+  "canonical_skill": ".agents/skills/material",
+  "bundled_skill": "plugin/skills/material",
   "plugin_mcp_config": "plugin/.mcp.json",
   "marketplace_file": ".agents/plugins/marketplace.json",
   "release_commit_pattern": "^release: v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:rc|beta)\\.[0-9]+)?$",

@@ -1,6 +1,6 @@
 # Material 3 Skill Usage Notes
 
-Use `$material-3` when the work is explicitly about Material Design 3 or Material You.
+Use `$material` when the work is explicitly about Material Design 3 or Material You.
 
 ## Good triggers
 

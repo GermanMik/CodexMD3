@@ -4,11 +4,11 @@ This plugin packages the repo-local Material Design 3 capability for Codex.
 
 ## Boundary
 
-- Canonical editable skill: `.agents/skills/material-3/`
-- Bundled packaging artifact: `plugin/skills/material-3/`
+- Canonical editable skill: `.agents/skills/material/`
+- Bundled packaging artifact: `plugin/skills/material/`
 - Optional deterministic MCP config: `plugin/.mcp.json`
 
-Do not treat `plugin/skills/material-3/` as the primary authoring surface. Sync it from the canonical skill.
+Do not treat `plugin/skills/material/` as the primary authoring surface. Sync it from the canonical skill.
 
 ## Install
 
@@ -18,7 +18,7 @@ Do not treat `plugin/skills/material-3/` as the primary authoring surface. Sync 
 
 ## Upgrade
 
-1. Update `.agents/skills/material-3/` first.
+1. Update `.agents/skills/material/` first.
 2. Run `python scripts/sync_plugin_bundle.py`.
 3. Run release validation in dry-run mode before tagging or publication.
 

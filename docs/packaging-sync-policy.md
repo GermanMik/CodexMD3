@@ -2,8 +2,8 @@
 
 ## Source of truth
 
-- Canonical skill: `.agents/skills/material-3/`
-- Bundled plugin skill: `plugin/skills/material-3/`
+- Canonical skill: `.agents/skills/material/`
+- Bundled plugin skill: `plugin/skills/material/`
 
 ## Rules
 

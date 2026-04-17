@@ -4,7 +4,7 @@ Repo-local Material Design 3 capability for Codex.
 
 CodexMD3 packages three layers that work together:
 
-- a canonical `material-3` skill for MD3-specific reasoning
+- a canonical `material` skill for MD3-specific reasoning
 - a deterministic MCP layer for lookups, scaffolds, scoring, and release checks
 - a local plugin bundle that makes the capability installable in Codex
 
@@ -40,14 +40,14 @@ In Codex:
 
 ### 3. Trigger the skill when the task is MD3-specific
 
-Use `$material-3` when the request is explicitly about Material Design 3 or Material You.
+Use `$material` when the request is explicitly about Material Design 3 or Material You.
 
 Good examples:
 
-- `$material-3 build a Compose Material 3 settings screen`
-- `$material-3 generate an MD3 theme from seed color #6750A4`
-- `$material-3 adapt this tablet shell to use navigation rail at medium width`
-- `$material-3 audit this screen for MD3 compliance`
+- `$material build a Compose Material 3 settings screen`
+- `$material generate an MD3 theme from seed color #6750A4`
+- `$material adapt this tablet shell to use navigation rail at medium width`
+- `$material audit this screen for MD3 compliance`
 
 Do not use it for generic frontend cleanup, brand work unrelated to MD3, or broad UI opinions with no Material 3 target.
 
@@ -67,7 +67,7 @@ If a task spans multiple areas, choose one primary mode and keep the second one 
 
 ### Canonical skill
 
-- Source of truth: `.agents/skills/material-3/`
+- Source of truth: `.agents/skills/material/`
 - Purpose: MD3-specific reasoning, decisions, tradeoffs, and user-facing recommendations
 
 ### Deterministic MCP layer
@@ -92,7 +92,7 @@ python mcp/cli.py check-release-consistency --expected-version 1.0.3 --release-n
 
 ### Plugin bundle
 
-- Path: `plugin/skills/material-3/`
+- Path: `plugin/skills/material/`
 - Purpose: installable packaging artifact for Codex
 
 Do not edit the bundled skill first. Update the canonical skill and then sync the bundle:
@@ -103,7 +103,7 @@ python scripts/sync_plugin_bundle.py
 
 ## Repo Layout
 
-- `.agents/skills/material-3/`: canonical skill and references
+- `.agents/skills/material/`: canonical skill and references
 - `plugin/`: installable local plugin bundle
 - `mcp/`: deterministic support layer and contracts
 - `scripts/`: sync, validation, and release tooling
@@ -135,5 +135,5 @@ If you just want to use CodexMD3:
 
 1. clone the repo
 2. install the local plugin from `./plugin`
-3. call `$material-3` for MD3-specific work
+3. call `$material` for MD3-specific work
 4. let the skill handle reasoning and use the MCP layer for deterministic facts

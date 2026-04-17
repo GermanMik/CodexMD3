@@ -20,8 +20,8 @@ EVIDENCE_MD = TASK_DIR / "evidence.md"
 VERDICT_JSON = TASK_DIR / "verdict.json"
 PROBLEMS_MD = TASK_DIR / "problems.md"
 
-CANONICAL_SKILL = ROOT / ".agents" / "skills" / "material-3"
-BUNDLED_SKILL = ROOT / "plugin" / "skills" / "material-3"
+CANONICAL_SKILL = ROOT / ".agents" / "skills" / "material"
+BUNDLED_SKILL = ROOT / "plugin" / "skills" / "material"
 PLUGIN_MANIFEST = ROOT / "plugin" / ".codex-plugin" / "plugin.json"
 PLUGIN_MCP = ROOT / "plugin" / ".mcp.json"
 PLUGIN_README = ROOT / "plugin" / "README.md"
@@ -236,7 +236,7 @@ def build(expected_version: str | None, builder_identity: str) -> None:
                 "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/marketplace-check.json",
             },
             {
-                "cmd": "Get-ChildItem -Recurse .agents/skills/material-3,plugin/skills/material-3",
+                "cmd": "Get-ChildItem -Recurse .agents/skills/material,plugin/skills/material",
                 "exit_code": 0,
                 "artifact": ".agent/tasks/codex-material-3-stage-3-plugin/raw/canonical-bundle-hashes.json",
             },
@@ -346,13 +346,13 @@ def verify(verifier_identity: str) -> int:
         and len(hash_payload.get("target_files", [])) >= 4
     )
     if not ac32_pass:
-        problems.append("AC3.2 failed: bundled skill copy is missing or incomplete under plugin/skills/material-3.")
+        problems.append("AC3.2 failed: bundled skill copy is missing or incomplete under plugin/skills/material.")
     ac_results.append(
         {
             "id": "AC3.2",
             "status": "PASS" if ac32_pass else "FAIL",
             "reason": (
-                "The bundled skill copy exists under plugin/skills/material-3 and is populated with the expected files."
+                "The bundled skill copy exists under plugin/skills/material and is populated with the expected files."
                 if ac32_pass
                 else "Bundled skill files are missing, incomplete, or out of sync."
             ),
@@ -363,13 +363,13 @@ def verify(verifier_identity: str) -> int:
     ac33_pass = (
         "Canonical editable skill" in plugin_readme_text
         and "Bundled packaging artifact" in plugin_readme_text
-        and "Do not treat `plugin/skills/material-3/` as the primary authoring surface." in plugin_readme_text
+        and "Do not treat `plugin/skills/material/` as the primary authoring surface." in plugin_readme_text
         and "## Install" in plugin_readme_text
         and "## Upgrade" in plugin_readme_text
         and "## Rollback" in plugin_readme_text
         and "## Internal distribution" in plugin_readme_text
-        and "Canonical skill: `.agents/skills/material-3/`" in sync_policy_text
-        and "Bundled plugin skill: `plugin/skills/material-3/`" in sync_policy_text
+        and "Canonical skill: `.agents/skills/material/`" in sync_policy_text
+        and "Bundled plugin skill: `plugin/skills/material/`" in sync_policy_text
         and "Do not treat plugin-bundled skill files as the canonical authoring surface." in canonical_skill_text
     )
     if not ac33_pass:
@@ -379,11 +379,11 @@ def verify(verifier_identity: str) -> int:
             "id": "AC3.3",
             "status": "PASS" if ac33_pass else "FAIL",
             "reason": (
-                "Docs explicitly describe plugin/skills/material-3 as a derived packaging artifact and preserve canonical authoring in .agents/skills/material-3."
+                "Docs explicitly describe plugin/skills/material as a derived packaging artifact and preserve canonical authoring in .agents/skills/material."
                 if ac33_pass
                 else "Install or sync docs do not clearly document the canonical-vs-bundled boundary."
             ),
-            "evidence_refs": ["plugin/README.md", "docs/packaging-sync-policy.md", ".agents/skills/material-3/SKILL.md"],
+            "evidence_refs": ["plugin/README.md", "docs/packaging-sync-policy.md", ".agents/skills/material/SKILL.md"],
         }
     )
 
