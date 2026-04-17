@@ -1,0 +1,17 @@
+{
+  "expected_version": "1.0.3",
+  "header": "## [1.0.3] - 2026-04-17",
+  "header_present": true,
+  "top_release_header": "## [1.0.3] - 2026-04-17",
+  "expected_entry_is_latest": true,
+  "required_sections": {
+    "Added": true,
+    "Changed": true,
+    "Fixed": true,
+    "Removed": true,
+    "Security": true,
+    "Migration Notes": true
+  },
+  "all_required_sections_present": true,
+  "entry_block": "## [1.0.3] - 2026-04-17\n### Added\n- Repo-local `scripts/stage4_release_proof.py` builder/verifier harness for `codex-material-3-stage-4-release`.\n\n### Changed\n- Release policy, checklist, and GitHub release flow now require stage-4 post-release proof commands and repo-local raw evidence before publication sign-off.\n\n### Fixed\n- Stage-4 release verification no longer depends on manual evidence refresh or self-certifying publication checks.\n\n### Removed\n- None.\n\n### Security\n- None.\n\n### Migration Notes\n- Run `python scripts/stage4_release_proof.py build --expected-version <version> --release-notes <path>` followed by `python scripts/stage4_release_proof.py verify` after GitHub Release publication."
+}

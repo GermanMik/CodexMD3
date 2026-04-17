@@ -1,0 +1,16 @@
+{
+  "expected_version": "1.0.3",
+  "tag": "v1.0.3",
+  "local_tag_commit": "e09d4767c4a04ed5a2903707b991f112c44524cf",
+  "local_main_contains_tag_commit": true,
+  "origin_main_contains_tag_commit": true,
+  "release_url": "https://github.com/GermanMik/CodexMD3/releases/tag/v1.0.3",
+  "release_published": true,
+  "release_is_prerelease": false,
+  "release_body_matches_notes": true,
+  "release_title_matches_tag": true,
+  "release_tag_matches_expected": true,
+  "version_surface_alignment": true,
+  "changelog_header_present": true,
+  "tag_commit_on_remote": true
+}

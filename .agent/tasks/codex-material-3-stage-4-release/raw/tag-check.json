@@ -1,0 +1,11 @@
+{
+  "tag": "v1.0.3",
+  "local_tag_exists": true,
+  "local_tag_commit": "e09d4767c4a04ed5a2903707b991f112c44524cf",
+  "release_commit_subject": "release: v1.0.3",
+  "release_commit_matches_policy": true,
+  "remote_tag_object": "16e49304d332bea7f8e894f5d533e3159f142dcb",
+  "remote_tag_commit": "e09d4767c4a04ed5a2903707b991f112c44524cf",
+  "remote_tag_exists": true,
+  "remote_tag_matches_local": true
+}

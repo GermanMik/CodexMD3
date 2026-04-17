@@ -1,77 +1,83 @@
 {
   "task_id": "codex-material-3-stage-4-release",
-  "verifier_identity": "fresh-verifier",
+  "verifier_identity": "stage4-release-fresh-verifier",
   "verdict": "PASS",
-  "summary": "The release workflow remains policy-complete for v1.0.1, and the repository now contains both dry-run validation evidence and actual Git/GitHub publication proof.",
+  "summary": "Fresh verification confirms the v1.0.3 release contour, published GitHub release, and repo-local post-release proof satisfy the stage-4 task.",
   "acceptance_criteria": [
     {
       "id": "AC4.1",
       "status": "PASS",
-      "reason": "The versioning policy defines SemVer, the canonical public version surface, and the MCP contracts version now participates in release alignment.",
+      "reason": "Versioning policy defines the canonical release surface and all version-bearing files align with the expected release version.",
       "evidence_refs": [
         "docs/versioning-policy.md",
         "plugin/.codex-plugin/plugin.json",
-        "mcp/contracts/tool-contracts.json"
+        "mcp/manifest.json",
+        "mcp/contracts/tool-contracts.json",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-version-check.json"
       ]
     },
     {
       "id": "AC4.2",
       "status": "PASS",
-      "reason": "Release policy and checklist exist, dry-run validation passes for v1.0.1, and post-release proof is stored in repo-local artifacts.",
+      "reason": "Release policy and checklist define dry-run and post-release proof, and the published release is backed by a distinct fresh-verifier contour.",
       "evidence_refs": [
         "docs/release-policy.md",
         "docs/release-checklist.md",
         ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json",
-        ".agent/tasks/codex-material-3-stage-4-release/raw/post-release-check.txt"
+        ".agent/tasks/codex-material-3-stage-4-release/raw/post-release-check.json",
+        ".agent/tasks/codex-material-3-stage-4-release/evidence.json"
       ]
     },
     {
       "id": "AC4.3",
       "status": "PASS",
-      "reason": "CHANGELOG.md contains the v1.0.1 release entry with the required section skeleton and concrete release notes.",
+      "reason": "CHANGELOG contains the latest release entry with the required section skeleton for the expected version.",
       "evidence_refs": [
         "CHANGELOG.md",
-        ".agent/tasks/codex-material-3-stage-4-release/raw/changelog-check.txt"
+        ".agent/tasks/codex-material-3-stage-4-release/raw/changelog-check.json"
       ]
     },
     {
       "id": "AC4.4",
       "status": "PASS",
-      "reason": "Tag policy and release commit policy are documented and proven by the actual v1.0.1 tag on the release commit.",
+      "reason": "Git state proves that the release tag and release commit follow the documented naming policy.",
       "evidence_refs": [
         "docs/versioning-policy.md",
-        ".agent/tasks/codex-material-3-stage-4-release/raw/tag-check.txt",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/tag-check.json",
         ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json"
       ]
     },
     {
       "id": "AC4.5",
       "status": "PASS",
-      "reason": "GitHub Release publication is documented, workflow-backed, and proven by the published v1.0.1 release artifact.",
+      "reason": "GitHub Release publication is documented, workflow-backed, and the published release matches the stored notes artifact.",
       "evidence_refs": [
         "docs/github-release-flow.md",
         ".github/workflows/publish-release.yml",
-        ".agent/tasks/codex-material-3-stage-4-release/raw/github-release-view.json"
+        ".agent/tasks/codex-material-3-stage-4-release/raw/release-notes-v1.0.3.md",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/github-release-view.json",
+        ".agent/tasks/codex-material-3-stage-4-release/raw/post-release-check.json"
       ]
     },
     {
       "id": "AC4.6",
       "status": "PASS",
-      "reason": "Packaging synchronization remains an explicit release step and the bundle stays in sync at release time.",
+      "reason": "Packaging synchronization remains an explicit release step and the bundle is proven clean at release time.",
       "evidence_refs": [
         "docs/packaging-sync-policy.md",
-        ".agent/tasks/codex-material-3-stage-4-release/raw/packaging-sync-check.txt"
+        ".agent/tasks/codex-material-3-stage-4-release/raw/packaging-sync-check.json"
       ]
     },
     {
       "id": "AC4.7",
       "status": "PASS",
-      "reason": "Release verification checks version drift across plugin manifest, MCP manifest, MCP contracts, and changelog surfaces.",
+      "reason": "Release verification proves version-drift checks across plugin manifest, MCP manifest, MCP contracts, changelog, bundle sync, and release notes.",
       "evidence_refs": [
         ".agent/tasks/codex-material-3-stage-4-release/raw/release-validation.json",
         "plugin/.codex-plugin/plugin.json",
         "mcp/manifest.json",
-        "mcp/contracts/tool-contracts.json"
+        "mcp/contracts/tool-contracts.json",
+        "CHANGELOG.md"
       ]
     }
   ],
@@ -79,12 +85,12 @@
     {
       "id": "RC1",
       "status": "PASS",
-      "reason": "Detected plugin version 1.0.1."
+      "reason": "Detected plugin version 1.0.3."
     },
     {
       "id": "RC2",
       "status": "PASS",
-      "reason": "Next version plan is 1.0.1 from current version 1.0.1."
+      "reason": "Next version plan is 1.0.3 from current version 1.0.3."
     },
     {
       "id": "RC3",
@@ -99,17 +105,17 @@
     {
       "id": "RC5",
       "status": "PASS",
-      "reason": "Release commit message 'release: v1.0.1' matches policy."
+      "reason": "Release commit message 'release: v1.0.3' matches policy."
     },
     {
       "id": "RC6",
       "status": "PASS",
-      "reason": "Tag 'v1.0.1' matches policy."
+      "reason": "Tag 'v1.0.3' matches policy."
     },
     {
       "id": "RC7",
       "status": "PASS",
-      "reason": "Release notes draft references version 1.0.1."
+      "reason": "Release notes draft references version 1.0.3."
     },
     {
       "id": "RC8",
@@ -139,5 +145,7 @@
   ],
   "open_problems_count": 0,
   "requires_fix": false,
-  "timestamp": "2026-04-17T06:55:29+03:00"
+  "source_evidence_timestamp": "2026-04-17T07:33:04+03:00",
+  "source_git_head": "e09d4767c4a04ed5a2903707b991f112c44524cf",
+  "timestamp": "2026-04-17T07:33:19+03:00"
 }

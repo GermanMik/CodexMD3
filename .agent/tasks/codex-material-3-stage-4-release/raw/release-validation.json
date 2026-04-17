@@ -1,26 +1,26 @@
 {
   "status": "PASS",
-  "current_version": "1.0.1",
-  "expected_version": "1.0.1",
-  "next_version_plan": "1.0.1",
-  "release_commit_message": "release: v1.0.1",
-  "target_tag": "v1.0.1",
+  "current_version": "1.0.3",
+  "expected_version": "1.0.3",
+  "next_version_plan": "1.0.3",
+  "release_commit_message": "release: v1.0.3",
+  "target_tag": "v1.0.3",
   "release_consistency": {
     "status": "PASS",
-    "current_version": "1.0.1",
-    "contracts_version": "1.0.1",
-    "expected_version": "1.0.1",
-    "target_tag": "v1.0.1",
+    "current_version": "1.0.3",
+    "contracts_version": "1.0.3",
+    "expected_version": "1.0.3",
+    "target_tag": "v1.0.3",
     "checks": [
       {
         "id": "current_version_detected",
         "status": "PASS",
-        "reason": "Detected plugin version 1.0.1."
+        "reason": "Detected plugin version 1.0.3."
       },
       {
         "id": "expected_version_alignment",
         "status": "PASS",
-        "reason": "Expected version 1.0.1 matches plugin, MCP manifest, and MCP contracts metadata."
+        "reason": "Expected version 1.0.3 matches plugin, MCP manifest, and MCP contracts metadata."
       },
       {
         "id": "version_surface_alignment",
@@ -50,17 +50,17 @@
       {
         "id": "release_commit_policy",
         "status": "PASS",
-        "reason": "Release commit message 'release: v1.0.1' matches policy."
+        "reason": "Release commit message 'release: v1.0.3' matches policy."
       },
       {
         "id": "tag_policy",
         "status": "PASS",
-        "reason": "Tag 'v1.0.1' matches policy."
+        "reason": "Tag 'v1.0.3' matches policy."
       },
       {
         "id": "release_notes",
         "status": "PASS",
-        "reason": "Release notes draft references version 1.0.1."
+        "reason": "Release notes draft references version 1.0.3."
       }
     ],
     "drift_detected": false
@@ -69,12 +69,12 @@
     {
       "id": "RC1",
       "status": "PASS",
-      "reason": "Detected plugin version 1.0.1."
+      "reason": "Detected plugin version 1.0.3."
     },
     {
       "id": "RC2",
       "status": "PASS",
-      "reason": "Next version plan is 1.0.1 from current version 1.0.1."
+      "reason": "Next version plan is 1.0.3 from current version 1.0.3."
     },
     {
       "id": "RC3",
@@ -89,17 +89,17 @@
     {
       "id": "RC5",
       "status": "PASS",
-      "reason": "Release commit message 'release: v1.0.1' matches policy."
+      "reason": "Release commit message 'release: v1.0.3' matches policy."
     },
     {
       "id": "RC6",
       "status": "PASS",
-      "reason": "Tag 'v1.0.1' matches policy."
+      "reason": "Tag 'v1.0.3' matches policy."
     },
     {
       "id": "RC7",
       "status": "PASS",
-      "reason": "Release notes draft references version 1.0.1."
+      "reason": "Release notes draft references version 1.0.3."
     },
     {
       "id": "RC8",

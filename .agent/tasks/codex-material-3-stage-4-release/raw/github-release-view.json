@@ -1,1 +1,10 @@
-{"body":"# Release v1.0.1\n\n## Summary\n- Strengthens the deterministic MD3 MCP proof-loop with repo-local JSON evidence and distinct builder/verifier passes.\n\n## Included surfaces\n- Canonical Material 3 skill\n- Deterministic MD3 MCP layer\n- Plugin bundle and marketplace metadata\n- Release policies, scripts, and validation artifacts\n- Version alignment for plugin manifest, MCP manifest, and MCP contracts\n\n## Verification\n- Packaging sync validated\n- Version-bearing files aligned\n- Stage-2 MCP raw JSON artifacts rebuilt and freshly verified\n- Release checks passed in dry-run validation\n","isDraft":false,"isPrerelease":false,"name":"v1.0.1","publishedAt":"2026-04-17T03:54:25Z","tagName":"v1.0.1","targetCommitish":"main","url":"https://github.com/GermanMik/CodexMD3/releases/tag/v1.0.1"}
+{
+  "body": "# Release v1.0.3\n\n## Summary\n- Closes the stage-4 release gap with a dedicated builder/verifier proof harness and explicit post-release evidence requirements.\n\n## Included surfaces\n- Canonical Material 3 skill\n- Deterministic MD3 MCP layer\n- Plugin bundle and marketplace metadata\n- Release policies, scripts, and validation artifacts\n- Stage-4 release proof artifacts and post-publication verification outputs\n\n## Verification\n- Packaging sync validated\n- Version-bearing files aligned\n- Release checks passed in dry-run validation\n- Post-release proof captures changelog, tag, release notes, published GitHub release state, and validation artifacts\n",
+  "isDraft": false,
+  "isPrerelease": false,
+  "name": "v1.0.3",
+  "publishedAt": "2026-04-17T04:32:27Z",
+  "tagName": "v1.0.3",
+  "targetCommitish": "main",
+  "url": "https://github.com/GermanMik/CodexMD3/releases/tag/v1.0.3"
+}
